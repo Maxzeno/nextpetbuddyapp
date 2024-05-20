@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo-removebg-crop.png'
 import Button from '../button/button';
-import { Search, GridFill, CaretDownFill, MenuButton, XLg } from "react-bootstrap-icons";
+import { Search, GridFill, CaretDownFill, List, XLg } from "react-bootstrap-icons";
 import { useState } from 'react';
 
 const Navbar = () => {
@@ -30,7 +30,7 @@ const Navbar = () => {
                     <img src={logo} alt="" width={150} />
                 </div>
                 <div className='relative'>
-                    <input placeholder='search for pets' type="text" className='border w-[25vw] rounded-lg h-[40px] px-4 focus:outline-none focus:border-2' />
+                    <input placeholder='search for pets' type="text" className='border w-[30vw] rounded-lg h-[40px] px-4 focus:outline-none focus:border-2' />
                     <Search className='relative right-8 top-[-3px] inline text-gray-500' />
 
                 </div>
@@ -72,17 +72,17 @@ const Navbar = () => {
                 </div>
                 <div className='flex items-center'>
                     <Search className='text-[1.5em] cursor-pointer leading-[0] inline text-black mr-3' onClick={() => toggleDropdown("search")} />
-                    <MenuButton className='text-[1.5em] cursor-pointer leading-[0] inline text-black' onClick={() => toggleDropdown("mobile")} />
+                    <List className='text-[1.7em] cursor-pointer leading-[0] inline text-black' onClick={() => toggleDropdown("mobile")} />
                 </div>
             </div>
             {openDropdown === "search" && <div onClick={closeMobileSearchByOutsideClick} id='closeMobileSearchByOutsideClick' className='fixed z-20 w-full bg-black bg-opacity-50 left-0 top-0 h-full'>
-                <div className='relative w-[80%] bg-white mt-20 mx-auto rounded py-2 px-3'>
+                <div className='relative w-[80vw] bg-white mt-20 mx-auto rounded py-2 px-3'>
                     <div className='py-2 flex justify-between'>
                         <div>Search for pets</div>
                         <div className='cursor-pointer' onClick={() => toggleDropdown("search")}><XLg className='text-[1.1em] leading-[0]' /></div>
                     </div>
                     <input placeholder='type' type="text" className='border w-full rounded-lg h-[40px] px-4 focus:outline-none focus:border-2' />
-                    <Search className='relative top-[-35px] left-[95%] inline text-gray-500' />
+                    <Search className='relative top-[-35px] left-[calc(80vw-50px)] inline text-gray-500' />
                 </div>
             </div>}
 
