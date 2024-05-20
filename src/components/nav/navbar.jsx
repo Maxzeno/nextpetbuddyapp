@@ -50,9 +50,9 @@ const Navbar = () => {
                         <Link to="#" className='hover:bg-gray-200 rounded p-2 block my-2'>one</Link>
                     </div>}
                 </div>
-                <Link to="#" className='mr-5 hover:text-red-500'>home</Link>
-                <Link to="#" className='mr-5 hover:text-red-500'>product</Link>
-                <Link to="#" className='mr-5 hover:text-red-500'>contact</Link>
+                <Link to="/" className='mr-5 hover:text-red-500'>home</Link>
+                <Link to="/products" className='mr-5 hover:text-red-500'>product</Link>
+                <Link to="/contact" className='mr-5 hover:text-red-500'>contact</Link>
                 <div className='mr-5flex items-center cursor-pointer' onClick={() => toggleDropdown("drop")}>
                     <div className='hover:text-red-500 '>
                         <span className='mr-2'>drop</span>
@@ -106,15 +106,15 @@ const Navbar = () => {
                                 <Link to="#" className='hover:bg-gray-200 rounded p-2 block my-2'>one</Link>
                             </div>}
                         </div>
-                        <Link to="#" className='mr-5 hover:text-red-500 block py-3 border-b'>home</Link>
-                        <Link to="#" className='mr-5 hover:text-red-500 block py-3 border-b'>product</Link>
-                        <Link to="#" className='mr-5 hover:text-red-500 block py-3 border-b'>contact</Link>
+                        <Link to="/" className='mr-5 hover:text-red-500 block py-3 border-b'>home</Link>
+                        <Link to="/products" className='mr-5 hover:text-red-500 block py-3 border-b'>product</Link>
+                        <Link to="/contact" className='mr-5 hover:text-red-500 block py-3 border-b'>contact</Link>
                         <div className='mr-5flex items-center cursor-pointer' onClick={() => toggleMobileDropdown("drop")}>
                             <div className='hover:text-red-500 block py-3 border-b'>
                                 <span className='mr-2'>drop</span>
                                 <CaretDownFill className='inline' />
                             </div>
-                            {openMobileDropdown === "drop" && <div className='absolute z-10 bg-white p-2 w-[calc(100%-2.5rem)] rounded top-[285px]' style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.12)" }}>
+                            {openMobileDropdown === "drop" && <div className='absolute z-10 bg-white p-2 w-[calc(100%-2.5rem)] rounded top-[330px]' style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.12)" }}>
                                 <Link to="#" className='hover:bg-gray-200 rounded p-2 block my-2'>one</Link>
                                 <Link to="#" className='hover:bg-gray-200 rounded p-2 block my-2'>one</Link>
                             </div>}
