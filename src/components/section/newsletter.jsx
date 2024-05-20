@@ -4,7 +4,7 @@ import backgroundImage from '../../assets/hero-custom.png'
 
 export default function Newsletter() {
     return <div className="mt-5 " style={{ backgroundImage: `url(${backgroundImage})` }}>
-        <div className="w-[70vw] mx-auto flex p-8">
+        <div className="w-[70vw] mx-auto flex p-20">
             <div className='flex-1'>
                 <div className='font-bold text-3xl mb-3'>
                     Get top deals, latest trends, and more.

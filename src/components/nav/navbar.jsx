@@ -51,7 +51,8 @@ const Navbar = () => {
                     </div>}
                 </div>
                 <Link to="#" className='mr-5 hover:text-red-500'>home</Link>
-                <Link to="#" className='mr-5 hover:text-red-500'>About</Link>
+                <Link to="#" className='mr-5 hover:text-red-500'>product</Link>
+                <Link to="#" className='mr-5 hover:text-red-500'>contact</Link>
                 <div className='mr-5flex items-center cursor-pointer' onClick={() => toggleDropdown("drop")}>
                     <div className='hover:text-red-500 '>
                         <span className='mr-2'>drop</span>
@@ -106,7 +107,8 @@ const Navbar = () => {
                             </div>}
                         </div>
                         <Link to="#" className='mr-5 hover:text-red-500 block py-3 border-b'>home</Link>
-                        <Link to="#" className='mr-5 hover:text-red-500 block py-3 border-b'>About</Link>
+                        <Link to="#" className='mr-5 hover:text-red-500 block py-3 border-b'>product</Link>
+                        <Link to="#" className='mr-5 hover:text-red-500 block py-3 border-b'>contact</Link>
                         <div className='mr-5flex items-center cursor-pointer' onClick={() => toggleMobileDropdown("drop")}>
                             <div className='hover:text-red-500 block py-3 border-b'>
                                 <span className='mr-2'>drop</span>
