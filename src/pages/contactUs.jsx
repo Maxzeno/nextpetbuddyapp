@@ -23,7 +23,7 @@ export default function ContactUs() {
                         Message
                     </div>
                     <textarea className='border w-full rounded-lg h-[80px] px-4 focus:outline-none focus:border-2 mb-5' placeholder="Message"></textarea>
-                    <Button text="Send" color="text-white" bgColor="bg-red-500" bgHover="hover:bg-red-600" />
+                    <Button text="Send" color="text-white" bgColor="bg-green-500" bgHover="hover:bg-green-600" />
 
                 </form>
             </div>

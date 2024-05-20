@@ -11,7 +11,7 @@ export default function CategoryDrop() {
     return (
         <>
             <div className=' border-b pb-3 my-3' onClick={() => toggleDropdown("category-drop")}>
-                <div className='flex justify-between cursor-pointer hover:text-red-500'>
+                <div className='flex justify-between cursor-pointer hover:text-green-500'>
                     <div>Dog</div>
                     <div>
                         <ChevronRight className='inline' />
