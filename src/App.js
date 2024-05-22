@@ -4,7 +4,6 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Home from './pages/home.jsx';
-import Counter from './pages/counter.jsx';
 import ContactUs from './pages/contactUs.jsx';
 import Products from './pages/products.jsx';
 import Login from './pages/login.jsx';
@@ -12,6 +11,7 @@ import Signup from './pages/signup.jsx';
 import ForgotPassword from './pages/forgotPassword.jsx';
 import ResetPassword from './pages/resetPassword.jsx';
 import ProductDetail from './pages/products_detail.jsx';
+import Cart from './pages/cart.jsx';
 
 
 /* root routes */
@@ -25,8 +25,8 @@ const router = createBrowserRouter([
     element: <ContactUs />
   },
   {
-    path: '/counter',
-    element: <Counter />
+    path: '/cart',
+    element: <Cart />
   },
   {
     path: '/products',
