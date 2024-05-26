@@ -38,7 +38,7 @@ export default function Products() {
 
               <li>
                 <a
-                  class="px-3 py-2 text-white bg-green-500 rounded"
+                  class="px-3 py-2 text-white bg-amber-500 rounded"
                   href="?page=1"
                 >
                   1

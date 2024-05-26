@@ -7,7 +7,7 @@ import {
   XLg,
 } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
-import logo from "../../assets/next-pet-nobg.png";
+import logo from "../../assets/Next_Pet_buddy.png";
 import Button from "../button/button";
 
 const Navbar = () => {
@@ -47,6 +47,7 @@ const Navbar = () => {
           </div>
           <div>
             <Button
+              to="/login"
               text="login"
               color="text-black"
               bgColor="bg-gray-200"
@@ -54,10 +55,11 @@ const Navbar = () => {
               extraClass="mr-3"
             />
             <Button
+              to="/signup"
               text="signup"
               color="text-white"
-              bgColor="bg-green-500"
-              bgHover="hover:bg-green-600"
+              bgColor="bg-amber-700"
+              bgHover="hover:bg-amber-800"
             />
           </div>
         </div>
@@ -66,7 +68,7 @@ const Navbar = () => {
             className="mr-5 flex items-center  cursor-pointer"
             onClick={() => toggleDropdown("pets")}
           >
-            <div className="bg-green-500 px-5 py-3 text-white rounded">
+            <div className="bg-amber-700 px-5 py-3 text-white rounded">
               <GridFill className="inline mr-2" />
               <span>Pets</span>
             </div>
@@ -90,20 +92,20 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          <Link to="/" className="mr-5 hover:text-green-500">
+          <Link to="/" className="mr-5 hover:text-amber-500">
             home
           </Link>
-          <Link to="/product" className="mr-5 hover:text-green-500">
+          <Link to="/product" className="mr-5 hover:text-amber-500">
             product
           </Link>
-          <Link to="/contact" className="mr-5 hover:text-green-500">
+          <Link to="/contact" className="mr-5 hover:text-amber-500">
             contact
           </Link>
           <div
             className="mr-5flex items-center cursor-pointer"
             onClick={() => toggleDropdown("drop")}
           >
-            <div className="hover:text-green-500 ">
+            <div className="hover:text-amber-500 ">
               <span className="mr-2">drop</span>
               <CaretDownFill className="inline" />
             </div>
@@ -192,7 +194,7 @@ const Navbar = () => {
                 className="cursor-pointer mb-4"
                 onClick={() => toggleMobileDropdown("pets")}
               >
-                <div className="bg-green-500 px-5 py-3 text-white rounded">
+                <div className="bg-amber-700 px-5 py-3 text-white rounded">
                   <GridFill className="inline mr-2" />
                   <span>Pets</span>
                 </div>
@@ -215,19 +217,19 @@ const Navbar = () => {
               </div>
               <Link
                 to="/"
-                className="mr-5 hover:text-green-500 block py-3 border-b"
+                className="mr-5 hover:text-amber-500 block py-3 border-b"
               >
                 home
               </Link>
               <Link
                 to="/product"
-                className="mr-5 hover:text-green-500 block py-3 border-b"
+                className="mr-5 hover:text-amber-500 block py-3 border-b"
               >
                 product
               </Link>
               <Link
                 to="/contact"
-                className="mr-5 hover:text-green-500 block py-3 border-b"
+                className="mr-5 hover:text-amber-500 block py-3 border-b"
               >
                 contact
               </Link>
@@ -235,7 +237,7 @@ const Navbar = () => {
                 className="mr-5flex items-center cursor-pointer"
                 onClick={() => toggleMobileDropdown("drop")}
               >
-                <div className="hover:text-green-500 block py-3 border-b">
+                <div className="hover:text-amber-500 block py-3 border-b">
                   <span className="mr-2">drop</span>
                   <CaretDownFill className="inline" />
                 </div>
@@ -262,6 +264,7 @@ const Navbar = () => {
             </div>
             <div className="py-3 px-5">
               <Button
+                to="/login"
                 text="login"
                 color="text-black"
                 bgColor="bg-gray-200"
@@ -269,10 +272,11 @@ const Navbar = () => {
                 extraClass="block w-full mb-3"
               />
               <Button
+                to="/signup"
                 text="signup"
                 color="text-white"
-                bgColor="bg-green-500"
-                bgHover="hover:bg-green-600"
+                bgColor="bg-amber-700"
+                bgHover="hover:bg-amber-800"
                 extraClass="block w-full"
               />
             </div>

@@ -20,8 +20,8 @@ export default function Hero() {
           to="/signup"
           text="Shop Now"
           color="text-white"
-          bgColor="bg-purple-700"
-          bgHover="hover:bg-purple-800"
+          bgColor="bg-amber-700"
+          bgHover="hover:bg-amber-800"
           extraClass="mr-3"
           trailingIcon={<ArrowRight className="inline" />}
         />

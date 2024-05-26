@@ -24,19 +24,19 @@ export default function ProductDetail() {
 
               <div className="flex gap-6 mt-24">
                 <img
-                  className="h-[80px] w-[80px] object-cover rounded-lg border-2 hover:border-green-400 cursor-pointer"
+                  className="h-[80px] w-[80px] object-cover rounded-lg border-2 hover:border-amber-400 cursor-pointer"
                   src={image1}
                   alt=""
                   onClick={() => setCurrentImage(image1)}
                 />
                 <img
-                  className="h-[80px] w-[80px] object-cover rounded-lg border-2 hover:border-green-400 cursor-pointer"
+                  className="h-[80px] w-[80px] object-cover rounded-lg border-2 hover:border-amber-400 cursor-pointer"
                   src={image2}
                   alt=""
                   onClick={() => setCurrentImage(image2)}
                 />
                 <img
-                  className="h-[80px] w-[80px] object-cover rounded-lg border-2 hover:border-green-400 cursor-pointer"
+                  className="h-[80px] w-[80px] object-cover rounded-lg border-2 hover:border-amber-400 cursor-pointer"
                   src={image1}
                   alt=""
                   onClick={() => setCurrentImage(image1)}
@@ -48,7 +48,7 @@ export default function ProductDetail() {
             <div className="border-b-2 pb-5">
               <div className="font-medium text-4xl mb-3">story</div>
               <div className="font-semibold text-xl mb-3">₦541.93</div>
-              <button className="rounded-full bg-green-500 hover:bg-green-600 text-white py-2 px-20">
+              <button className="rounded-full bg-amber-500 hover:bg-amber-600 text-white py-2 px-20">
                 <Plus className="inline text-[1.1em] leading-[0]" />
                 <span>add</span>
               </button>

@@ -20,7 +20,7 @@ export default function ForgotPassword() {
                 <span>Already have an account?</span>
                 <Link
                   to="/login"
-                  className="text-green-500 hover:text-green-400 ml-1"
+                  className="text-amber-700 hover:text-amber-600 ml-1"
                 >
                   Sign in
                 </Link>
@@ -51,13 +51,13 @@ export default function ForgotPassword() {
                   text="Submit"
                   color="text-white"
                   extraClass="block w-full rounded-lg my-4"
-                  bgColor="bg-green-600"
-                  bgHover="hover:bg-green-700"
+                  bgColor="bg-amber-600"
+                  bgHover="hover:bg-amber-700"
                 />
                 <div>
                   <span>Back to login </span>
                   <Link
-                    className="text-green-500 hover:text-green-400 ml-1"
+                    className="text-amber-700 hover:text-amber-600 ml-1"
                     to="/login"
                   >
                     {" "}
@@ -87,8 +87,8 @@ export default function ForgotPassword() {
               <Button
                 text="Back to home"
                 color="text-white"
-                bgColor="bg-green-500"
-                bgHover="hover:bg-green-600"
+                bgColor="bg-amber-500"
+                bgHover="hover:bg-amber-600"
               />
             </div>
           </div>
