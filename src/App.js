@@ -3,15 +3,15 @@ import './index.css';
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import Home from './pages/home.jsx';
-import ContactUs from './pages/contactUs.jsx';
-import Products from './pages/products.jsx';
-import Login from './pages/login.jsx';
-import Signup from './pages/signup.jsx';
-import ForgotPassword from './pages/forgotPassword.jsx';
-import ResetPassword from './pages/resetPassword.jsx';
-import ProductDetail from './pages/products_detail.jsx';
 import Cart from './pages/cart.jsx';
+import ContactUs from './pages/contactUs.jsx';
+import ForgotPassword from './pages/forgotPassword.jsx';
+import Home from './pages/home.jsx';
+import Login from './pages/login.jsx';
+import Products from './pages/product.jsx';
+import ProductDetail from './pages/products_detail.jsx';
+import ResetPassword from './pages/resetPassword.jsx';
+import Signup from './pages/signup.jsx';
 
 
 /* root routes */
@@ -29,11 +29,11 @@ const router = createBrowserRouter([
     element: <Cart />
   },
   {
-    path: '/products',
+    path: '/product',
     element: <Products />
   },
   {
-    path: '/product-detail/:productId',
+    path: '/product/:productId',
     element: <ProductDetail />
   },
   {
