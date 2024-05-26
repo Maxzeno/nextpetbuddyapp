@@ -60,7 +60,7 @@ export default function Sidebar({ head, body }) {
                   <span>Cart</span>
                 </Link>
                 <Link
-                  to="/orders"
+                  to="/order"
                   className="flex gap-3 items-center text-black rounded-m py-2 px-4"
                 >
                   <Basket className="text-[1.1em] leading-[0]" />
