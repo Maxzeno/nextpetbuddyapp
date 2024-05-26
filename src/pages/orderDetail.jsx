@@ -50,7 +50,9 @@ export default function OrderDetail() {
                       <img className="h-[10vh]" src={jumImage} alt="" />
                     </td>
                     <td className="py-2 px-4 border-t">
-                      <Link to="#">Bull Dog</Link>
+                      <Link to="#" className="hover:text-amber-600">
+                        Bull Dog
+                      </Link>
                     </td>
                     <td className="py-2 px-4 border-t">RfrpWLjR</td>
                     <td className="py-2 px-4 border-t">2</td>

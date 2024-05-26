@@ -28,6 +28,7 @@ export default function Cart() {
                   <Dash className="inline border text-black mr-2 text-[1.6em] hover:bg-gray-200 p-1 cursor-pointer rounded" />
 
                   <input
+                    value="1"
                     type="text"
                     className="border border-gray-300 outline-1 outline-gray-300 rounded text-center w-7 h-7 p-1"
                   />

@@ -20,7 +20,9 @@ export default function Orders() {
                 </tr>
                 <tr>
                   <td className="py-2 px-4 border-t">
-                    <Link to="#">3hjh33j</Link>
+                    <Link to="#" className="hover:text-amber-600">
+                      3hjh33j
+                    </Link>
                   </td>
                   <td className="py-2 px-4 border-t">Yes</td>
                   <td className="py-2 px-4 border-t">
@@ -33,7 +35,11 @@ export default function Orders() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 px-4 border-t">3hjh33j</td>
+                  <td className="py-2 px-4 border-t">
+                    <Link to="#" className="hover:text-amber-600">
+                      ejdjkee
+                    </Link>
+                  </td>
                   <td className="py-2 px-4 border-t">Yes</td>
                   <td className="py-2 px-4 border-t">
                     <span className="bg-gray-400 px-2 text-white rounded text-xs py-1 font-medium">
