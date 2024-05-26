@@ -8,7 +8,7 @@ export default function Newsletter() {
       className="mt-5 "
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      <div className="w-[70vw] mx-auto flex gap-20 p-20">
+      <div className="lg:w-[70vw] w-[90vw] mx-auto flex lg:gap-20 lg:p-20 p-10">
         <div className="flex-1">
           <div className="font-bold text-3xl mb-3">Get top deals and more.</div>
           <div className="font-normal text-lg mb-3">

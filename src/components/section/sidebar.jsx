@@ -1,5 +1,14 @@
 import { useState } from "react";
-import { Cart, MenuButton, XLg } from "react-bootstrap-icons";
+import {
+  ArrowReturnRight,
+  Basket,
+  Cart,
+  Gear,
+  MenuButton,
+  PinMap,
+  XLg,
+} from "react-bootstrap-icons";
+import { Link } from "react-router-dom";
 import Navbar from "../../components/nav/navbar";
 import useScreenWidth from "../../hooks/useScreenWidth";
 
@@ -43,17 +52,37 @@ export default function Sidebar({ head, body }) {
               }`}
             >
               <div className="pb-5 mb-5 border-b-2 pr-auto lg:mr-10">
-                <div className="flex gap-3 items-center bg-gray-950 text-white rounded-md py-2 px-4">
+                <Link
+                  to="/cart"
+                  className="flex gap-3 items-center bg-gray-950 text-white rounded-md py-2 px-4"
+                >
                   <Cart className="text-[1.1em] leading-[0]" />
                   <span>Cart</span>
-                </div>
-                <div className="flex gap-3 items-center text-black rounded-m py-2 px-4">
-                  <Cart className="text-[1.1em] leading-[0]" />
-                  <span>Cart</span>
-                </div>
+                </Link>
+                <Link
+                  to="/orders"
+                  className="flex gap-3 items-center text-black rounded-m py-2 px-4"
+                >
+                  <Basket className="text-[1.1em] leading-[0]" />
+                  <span>Order</span>
+                </Link>
+                <Link
+                  to="/address"
+                  className="flex gap-3 items-center text-black rounded-m py-2 px-4"
+                >
+                  <PinMap className="text-[1.1em] leading-[0]" />
+                  <span>Address</span>
+                </Link>
+                <Link
+                  to="/settings"
+                  className="flex gap-3 items-center text-black rounded-m py-2 px-4"
+                >
+                  <Gear className="text-[1.1em] leading-[0]" />
+                  <span>Settings</span>
+                </Link>
               </div>
               <div className="flex gap-3 items-center text-black rounded-m py-2 px-4">
-                <Cart className="text-[1.1em] leading-[0]" />
+                <ArrowReturnRight className="text-[1.1em] leading-[0]" />
                 <span>Log out</span>
               </div>
             </div>
