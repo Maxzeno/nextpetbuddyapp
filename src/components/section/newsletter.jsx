@@ -18,7 +18,7 @@ export default function Newsletter() {
             <input
               placeholder="Email Address"
               type="text"
-              className="border w-[80%] rounded-lg h-[40px] px-4 focus:outline-none focus:border-2"
+              className="border w-[80%] rounded-lg h-[40px] px-4 focus:outline-2 outline-gray-300"
             />
 
             <Button

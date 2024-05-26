@@ -59,7 +59,7 @@ export default function Sidebar({ head, body }) {
             </div>
 
             {openDropdown !== "mobile" && (
-              <div className="pl-auto lg:pl-10 pt-5">
+              <div className="pl-auto lg:pl-10 pt-5 w-full">
                 <div className="flex justify-between">
                   <div>{head}</div>
 

@@ -15,7 +15,7 @@ export default function Address() {
             <input
               placeholder="State"
               type="text"
-              className="border w-full rounded-lg h-[40px] px-4 mt-2 focus:outline-none focus:border-2"
+              className="border w-full rounded-lg h-[40px] px-4 mt-2 focus:outline-2 outline-gray-300"
             />
 
             <div className="pt-4">Address</div>
@@ -23,7 +23,7 @@ export default function Address() {
             <input
               placeholder="Address"
               type="text"
-              className="border w-full rounded-lg h-[40px] px-4 mt-2 focus:outline-none focus:border-2"
+              className="border w-full rounded-lg h-[40px] px-4 mt-2 focus:outline-2 outline-gray-300"
             />
 
             <Button

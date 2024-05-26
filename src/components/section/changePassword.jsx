@@ -11,7 +11,7 @@ export default function ChangePassword() {
           <input
             placeholder="**********"
             type="password"
-            className="border w-full rounded-lg h-[40px] px-4 mt-2 focus:outline-none focus:border-2"
+            className="border w-full rounded-lg h-[40px] px-4 mt-2 focus:outline-2 outline-gray-300"
           />
         </div>
 
@@ -21,7 +21,7 @@ export default function ChangePassword() {
           <input
             placeholder="**********"
             type="password"
-            className="border w-full rounded-lg h-[40px] px-4 mt-2 focus:outline-none focus:border-2"
+            className="border w-full rounded-lg h-[40px] px-4 mt-2 focus:outline-2 outline-gray-300"
           />
         </div>
       </div>
