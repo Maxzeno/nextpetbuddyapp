@@ -77,7 +77,7 @@ export default function ProductDetail() {
 
         <div>
           <div className="font-medium text-xl mb-3 mt-5">Related Items</div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-5">
             <PetCard />
             <PetCard />
             <PetCard />

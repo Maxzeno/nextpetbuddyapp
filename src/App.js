@@ -2,7 +2,8 @@ import './index.css';
 
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Address from './pages/address.jsx';
 import Cart from './pages/cart.jsx';
 import ContactUs from './pages/contactUs.jsx';
@@ -22,6 +23,10 @@ import Signup from './pages/signup.jsx';
 const router = createBrowserRouter([
   {
     path: '/',
+    element: <Home />
+  },
+  {
+    path: '/home',
     element: <Home />
   },
   {
@@ -78,6 +83,7 @@ const router = createBrowserRouter([
 export default function App() {
   return (
     <main>
+      <ToastContainer />
       <RouterProvider router={router}></RouterProvider>
     </main>
   );

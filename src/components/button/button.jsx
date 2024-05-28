@@ -5,6 +5,8 @@ export default function Button({
   bgColor,
   color,
   bgHover,
+  disabled = false,
+  type = "button",
   extraClass = "",
   trailingIcon = "",
   to = "",
@@ -15,6 +17,8 @@ export default function Button({
   };
   return (
     <button
+      disabled={disabled}
+      type={type}
       onClick={navigateTo}
       className={`py-2 px-3 rounded ${bgColor} ${bgHover} ${color} ${extraClass}`}
     >
