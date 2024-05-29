@@ -1,6 +1,6 @@
 import React from "react";
 import { Dash, Plus, Trash } from "react-bootstrap-icons";
-import jumImage from "../assets/mid-nobg.png";
+import jumImage from "../assets/dog.jpg";
 import Button from "../components/button/button.jsx";
 import Footer from "../components/section/footer.jsx";
 import Sidebar from "../components/section/sidebar.jsx";
