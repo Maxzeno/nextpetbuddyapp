@@ -47,7 +47,7 @@ export default function CategoryDrop({ item }) {
             {item.breeds.map((breed, index) => (
               <Link
                 key={index}
-                to={`/product/?breed=${breed.id}${page && "&page=" + page}`}
+                to={`/product/?breed=${breed.id}${page ? "&page=" + page : ""}`}
                 className="hover:bg-gray-200 rounded p-2 block my-2"
               >
                 {breed.name}

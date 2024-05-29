@@ -6,11 +6,13 @@ import {
   Search,
   XLg,
 } from "react-bootstrap-icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/Next_Pet_buddy.png";
 import Button from "../button/button";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   const [openDropdown, setOpenDropdown] = useState(null);
   const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
 
@@ -28,6 +30,16 @@ const Navbar = () => {
     }
   };
 
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleFornKeyPress = (event) => {
+    if (event.key === "Enter") {
+      // Perform the search operation here
+      console.log(searchTerm);
+      navigate(`/product/?search=${searchTerm}`);
+    }
+  };
+
   return (
     <nav className="border-b-2">
       <div className="hidden md:block w-[80vw] mx-auto my-5">
@@ -39,6 +51,8 @@ const Navbar = () => {
           </div>
           <div className="relative">
             <input
+              onKeyDown={handleFornKeyPress}
+              onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="search for pets"
               type="text"
               className="border w-[30vw] rounded-lg h-[40px] px-4 focus:outline-2 outline-gray-300"
@@ -179,6 +193,8 @@ const Navbar = () => {
                 </div>
               </div>
               <input
+                onKeyDown={handleFornKeyPress}
+                onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="type"
                 type="text"
                 className="border w-full rounded-lg h-[40px] px-4 focus:outline-2 outline-gray-300"

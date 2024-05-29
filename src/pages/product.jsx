@@ -15,17 +15,18 @@ export default function Products() {
   let page = searchParams.get("page") || 1;
   const offset = (page - 1) * 10;
 
+  const search = searchParams.get("search") || "";
   const petId = searchParams.get("pet");
   const breedId = searchParams.get("breed");
 
   let urlAnimal = "";
   if (breedId) {
-    urlAnimal = `/product/?breed=${breedId}&limit=12&offset=${offset}`;
+    urlAnimal = `/product/?breed=${breedId}&limit=12&offset=${offset}&search=${search}`;
   } else {
     if (petId) {
-      urlAnimal = `/product/?breed__pet=${petId}&limit=12&offset=${offset}`;
+      urlAnimal = `/product/?breed__pet=${petId}&limit=12&offset=${offset}&search=${search}`;
     } else {
-      urlAnimal = `/product/?limit=12&offset=${offset}`;
+      urlAnimal = `/product/?limit=12&offset=${offset}&search=${search}`;
     }
   }
 
@@ -117,7 +118,11 @@ export default function Products() {
             <Pagination
               currentPage={page}
               path={`/product/${
-                breedId ? `?breed=${breedId}&` : petId ? `?pet=${petId}&` : "?"
+                breedId
+                  ? `?breed=${breedId}&search=${search}&`
+                  : petId
+                  ? `?pet=${petId}&search=${search}&`
+                  : `?search=${search}&`
               }page=`}
               itemsPerPage={10}
               totalItems={petsData?.count ?? 0}
