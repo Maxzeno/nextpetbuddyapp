@@ -61,6 +61,8 @@ export default function Address() {
         body={
           userLoading ? (
             <Loading extraClass="flex justify-center item-center pb-5" />
+          ) : userError ? (
+            <div className="py-3">{userError.detail}</div>
           ) : (
             <form className="pt-5" onSubmit={handleSubmit(onSubmit)}>
               <div>State</div>

@@ -9,7 +9,6 @@ import Loading from "./loading.jsx";
 
 export default function Account() {
   const [userData, userLoading, userError] = useFetch("/auth-user");
-  console.log(userData);
 
   const {
     register,
@@ -45,6 +44,8 @@ export default function Account() {
 
   return userLoading ? (
     <Loading extraClass="flex justify-center item-center pb-5" />
+  ) : userError ? (
+    <div className="py-3">{userError.detail}</div>
   ) : (
     <form className="py-5 mb-2" onSubmit={handleSubmit(onSubmit)}>
       <div>Name</div>
