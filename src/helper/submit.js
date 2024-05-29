@@ -24,8 +24,6 @@ const submitHelper = async (url, body, requireAuth=true, method="POST") => {
       errorObj = data
   }
   
-    console.log(data);
-
   return [ data, errorObj ];
 };
 
