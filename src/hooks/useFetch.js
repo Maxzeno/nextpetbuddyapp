@@ -12,13 +12,7 @@ const useFetch = (url, requireAuth=true) => {
       setLoading(true);
       setError(null);
 
-      const token = Cookies.get("token");
-
-      if (requireAuth && !token) {
-        setError("No access token found");
-        setLoading(false);
-        return;
-      }
+      const token = Cookies.get("token") || "";
 
       let headers = {
         "Content-Type": "application/json",
@@ -28,23 +22,21 @@ const useFetch = (url, requireAuth=true) => {
         headers['Authorization'] = `Bearer ${token}`
       }
 
-      try {
-        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}${url}`, {
-          method: "GET",
-          headers: headers,
-        });
+      const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}${url}`, {
+        method: "GET",
+        headers: headers,
+      });
 
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
+      const result = await response.json();
 
-        const result = await response.json();
+      if (!response.ok) {
+        setError(result);
+      } else {
         setData(result);
-      } catch (error) {
-        setError(error.message || "An error occurred");
-      } finally {
-        setLoading(false);
       }
+        
+      setLoading(false);
+ 
     };
 
     fetchData();

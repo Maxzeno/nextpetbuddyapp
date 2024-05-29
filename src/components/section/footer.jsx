@@ -16,7 +16,7 @@ export default function Footer() {
             categoryData.results.map((item, index) => (
               <Link
                 key={index}
-                to={`product/?pet=${item.id}`}
+                to={`/product/?pet=${item.id}`}
                 className="hover:text-amber-600"
               >
                 {item.name}

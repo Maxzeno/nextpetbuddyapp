@@ -1,18 +1,48 @@
 import React, { useState } from "react";
 import { Filter, XLg } from "react-bootstrap-icons";
+import { useSearchParams } from "react-router-dom";
 import PetCard from "../components/card/petsCard.jsx";
 import Navbar from "../components/nav/navbar.jsx";
 import CategoryDrop from "../components/section/categoryDrop.jsx";
 import Footer from "../components/section/footer.jsx";
+import Loading from "../components/section/loading.jsx";
+import Pagination from "../components/section/pagination.jsx";
+import useFetch from "../hooks/useFetch.js";
 import useScreenWidth from "../hooks/useScreenWidth.js";
 
 export default function Products() {
+  const [searchParams] = useSearchParams();
+  let page = searchParams.get("page") || 1;
+  const offset = (page - 1) * 10;
+
+  const petId = searchParams.get("pet");
+  const breedId = searchParams.get("breed");
+
+  let urlAnimal = "";
+  if (breedId) {
+    urlAnimal = `/product/?breed=${breedId}&limit=12&offset=${offset}`;
+  } else {
+    if (petId) {
+      urlAnimal = `/product/?breed__pet=${petId}&limit=12&offset=${offset}`;
+    } else {
+      urlAnimal = `/product/?limit=12&offset=${offset}`;
+    }
+  }
+
+  const [petsData, petsLoading, petsError] = useFetch(urlAnimal, false);
+
+  const [categoryData, categoryLoading, categoryError] = useFetch(
+    "/pet",
+    false
+  );
+
   const [openDropdown, setOpenDropdown] = useState(null);
   const screenWidth = useScreenWidth();
 
   const toggleDropdown = (dropdown) => {
     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
   };
+
   return (
     <>
       {openDropdown === "mobile" && screenWidth < 768 ? (
@@ -40,15 +70,21 @@ export default function Products() {
             }`}
           >
             <div className="font-medium text-lg">Pet Categories</div>
-            <CategoryDrop />
-            <CategoryDrop />
+            {!categoryLoading &&
+              !categoryError &&
+              categoryData.map((item, index) => (
+                <CategoryDrop key={index} item={item} />
+              ))}
           </div>
           <div className="md:col-span-3">
             <div className="font-medium text-3xl bg-gray-200 rounded p-10">
               Products
             </div>
             <div className="flex justify-between items-center">
-              <div className="text-sm py-5">10 Products found</div>
+              <div className="text-sm py-5">
+                {" "}
+                {!petsLoading && !petsError && petsData.count} Products found
+              </div>
               <div className="block md:hidden">
                 <button
                   className="border px-2 py-1 rounded"
@@ -60,39 +96,32 @@ export default function Products() {
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-5">
-              <PetCard />
-              <PetCard />
-              <PetCard />
-              <PetCard />
+              {!petsLoading &&
+                !petsError &&
+                petsData.results.map((item, index) => (
+                  <PetCard
+                    key={index}
+                    id={item.id}
+                    image={item.image}
+                    title={item.name}
+                    price={item.price}
+                    breed={item.breed.name}
+                    pet={item.breed.pet.id}
+                  />
+                ))}
             </div>
-            <ul className="flex items-center space-x-2 py-3">
-              <li>
-                <a
-                  className="px-3 py-2 text-gray-400 bg-gray-200 rounded cursor-default"
-                  href="?page=1"
-                >
-                  Previous
-                </a>
-              </li>
+            {petsLoading && (
+              <Loading extraClass="flex justify-center item-center pb-5" />
+            )}
 
-              <li>
-                <a
-                  className="px-3 py-2 text-white bg-amber-600 rounded"
-                  href="?page=1"
-                >
-                  1
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="px-3 py-2 text-gray-400 bg-gray-200 rounded cursor-default"
-                  href="?page=1"
-                >
-                  Next
-                </a>
-              </li>
-            </ul>
+            <Pagination
+              currentPage={page}
+              path={`/product/${
+                breedId ? `?breed=${breedId}&` : petId ? `?pet=${petId}&` : "?"
+              }page=`}
+              itemsPerPage={10}
+              totalItems={petsData?.count ?? 0}
+            />
           </div>
         </div>
       </div>
