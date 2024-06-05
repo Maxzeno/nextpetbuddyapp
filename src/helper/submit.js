@@ -18,8 +18,11 @@ const submitHelper = async (url, body, requireAuth=true, method="POST") => {
       headers: headers,
       body: JSON.stringify(body),
     });
-
-    data = await response.json();
+    if (method.toLocaleUpperCase() === "DELETE") {
+      data = {};
+    } else {
+      data = await response.json();
+    }
     if (!response.ok) {
       errorObj = data
   }

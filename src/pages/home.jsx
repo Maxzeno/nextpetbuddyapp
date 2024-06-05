@@ -54,6 +54,7 @@ const Home = () => {
                 price={item.price}
                 breed={item.breed.name}
                 pet={item.breed.pet.id}
+                orderitem={item.orderitem}
               />
             ))}
         </div>

@@ -21,7 +21,6 @@ export default function ChangePassword() {
       new_password: data.new_password,
       new_password_again: data.new_password,
     };
-    console.log(body);
     try {
       const [result, errorObj] = await submitHelper("/change-password/", body);
       if (!errorObj) {
