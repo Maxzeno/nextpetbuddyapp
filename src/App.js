@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Address from './pages/address.jsx';
 import Cart from './pages/cart.jsx';
+import ConfirmEmail from './pages/confirmEmail.jsx';
 import ContactUs from './pages/contactUs.jsx';
 import ForgotPassword from './pages/forgotPassword.jsx';
 import Home from './pages/home.jsx';
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
   {
     path: '/reset-password',
     element: <ResetPassword />
+  },
+  {
+    path: '/confirm-email/:uid/:token',
+    element: <ConfirmEmail />
   },
 ]);
 
