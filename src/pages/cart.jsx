@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../components/button/button.jsx";
+import EmptyCard from "../components/card/EmptyCard.jsx";
 import CartCard from "../components/card/cartCard.jsx";
 import Footer from "../components/section/footer.jsx";
 import Loading from "../components/section/loading.jsx";
@@ -14,7 +15,6 @@ export default function Cart() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("cartsData changed");
     if (cartsData) {
       for (let index = 0; index < cartsData.length; index++) {
         const cartItem = cartsData[index];
@@ -44,22 +44,28 @@ export default function Cart() {
               <Loading extraClass="flex justify-center item-center pb-5" />
             )}
             {cartsError && <div>Failed to fetch</div>}
-            <div className="border-t-2 pt-5 mt-5 font-medium flex justify-between">
-              <div>Delivery fee</div>
-              <div> ₦1,000</div>
-            </div>
-            <div className="pt-5 font-medium flex justify-between">
-              <div>Total</div>
-              <div> ₦{totalPrice.toFixed(2)}</div>
-            </div>
-            <div className="text-right pt-5">
-              <Button
-                text="Make Payment"
-                color="text-white"
-                bgColor="bg-amber-700"
-                bgHover="hover:bg-amber-800"
-              />
-            </div>
+            {!cartsLoading && !cartsError && cartsData.length !== 0 ? (
+              <>
+                <div className="border-t-2 pt-5 mt-5 font-medium flex justify-between">
+                  <div>Delivery fee</div>
+                  <div> ₦1,000</div>
+                </div>
+                <div className="pt-5 font-medium flex justify-between">
+                  <div>Total</div>
+                  <div> ₦{totalPrice.toFixed(2)}</div>
+                </div>
+                <div className="text-right pt-5">
+                  <Button
+                    text="Make Payment"
+                    color="text-white"
+                    bgColor="bg-amber-700"
+                    bgHover="hover:bg-amber-800"
+                  />
+                </div>
+              </>
+            ) : (
+              <EmptyCard />
+            )}
           </div>
         }
       />

@@ -1,10 +1,13 @@
+import Cookies from "js-cookie";
+import { jwtDecode } from "jwt-decode";
 import React, { useEffect, useState } from "react";
-import { Plus } from "react-bootstrap-icons";
 import { useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
 import image1 from "../assets/hero-pet.png";
 import Navbar from "../components/nav/navbar.jsx";
 import Footer from "../components/section/footer.jsx";
 import Loading from "../components/section/loading.jsx";
+import submitHelper from "../helper/submit.js";
 import useFetch from "../hooks/useFetch.js";
 
 export default function ProductDetail() {
@@ -20,8 +23,62 @@ export default function ProductDetail() {
     if (productData && productData.image) {
       setCurrentImage(productData.image);
     }
+    setCartId(
+      productData
+        ? productData.orderitem
+          ? productData.orderitem.id
+          : null
+        : null
+    );
   }, [productData]);
 
+  const token = Cookies.get("token") || "";
+  const jwtBody = jwtDecode(token);
+
+  const [loading, setLoading] = useState(false);
+  const [cartId, setCartId] = useState(
+    productData
+      ? productData.orderitem
+        ? productData.orderitem.id
+        : null
+      : null
+  );
+
+  const toogleCart = async () => {
+    setLoading(true);
+
+    const body = {
+      quantity: 1,
+      animal: productData.id,
+      buyer: jwtBody.user_id,
+    };
+    try {
+      const cartUserId = cartId;
+      const [result, errorObj] = await submitHelper(
+        cartUserId ? `/cart/${cartUserId}/` : "/cart/",
+        cartUserId ? {} : body,
+        true,
+        cartUserId ? "DELETE" : "POST"
+      );
+      if (cartId) {
+        setCartId(null);
+      } else {
+        setCartId(result.id);
+      }
+
+      if (!errorObj) {
+        toast.success(
+          cartId ? "Product removed from cart" : "Product added to cart"
+        );
+      } else {
+        toast.error(errorObj.detail || "An error occurred");
+      }
+    } catch (error) {
+      toast.error("An error occurred");
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <>
       <Navbar />
@@ -76,9 +133,14 @@ export default function ProductDetail() {
                 <div className="font-semibold text-xl mb-3">
                   ₦{productData.price}
                 </div>
-                <button className="rounded-full bg-amber-500 hover:bg-amber-600 text-white py-2 px-20">
-                  <Plus className="inline text-[1.1em] leading-[0]" />
-                  <span>add</span>
+                <button
+                  onClick={() => toogleCart()}
+                  className="rounded-full bg-amber-500 hover:bg-amber-600 text-white py-2 px-20"
+                >
+                  {/* <Plus className="inline text-[1.1em] leading-[0]" /> */}
+                  <span>
+                    {loading ? "LOADING.." : cartId ? "REMOVE" : "ADD"}
+                  </span>
                 </button>
               </div>
               <div className="flex pt-5">
