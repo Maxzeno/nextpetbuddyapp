@@ -1,15 +1,48 @@
 import React, { useState } from "react";
-import { ArrowRight } from "react-bootstrap-icons";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import imageSubmit from "../assets/message.png";
 import logo from "../assets/next-pet-nobg.png";
 import image from "../assets/signin-g.svg";
 import Button from "../components/button/button";
 import NavbarAuth from "../components/nav/navbarAuth.jsx";
 import Footer from "../components/section/footer.jsx";
+import submitHelper from "../helper/submit.js";
 
 export default function ForgotPassword() {
-  const [submit] = useState(false);
+  const [submit, setSubmit] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const [loading, setLoading] = useState(false);
+
+  const onSubmit = async (data) => {
+    setLoading(true);
+
+    try {
+      const [result, errorObj] = await submitHelper(
+        "/forgot-password/",
+        data,
+        false
+      );
+
+      if (!errorObj) {
+        toast.success("Reset passwordlink sent to your email");
+        setSubmit(true);
+      } else {
+        toast.error(errorObj.detail || "An error occurred");
+      }
+    } catch (error) {
+      toast.error("An error occurred");
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <>
       {!submit ? (
@@ -38,17 +71,32 @@ export default function ForgotPassword() {
                 Please enter the email address associated with your account and
                 We will email you a link to reset your password.
               </div>
-              <form action="post">
+              <form action="post" onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-3 mt-2">
                   <input
+                    {...register("email", {
+                      required: "This field is required",
+                      pattern: {
+                        value:
+                          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                        message: "Invalid email address",
+                      },
+                    })}
                     placeholder="Email Address"
                     type="text"
                     className="border w-full rounded-lg h-[40px] px-4 focus:outline-2 outline-gray-300"
                   />
+                  {errors.email && (
+                    <p className="text-sm text-red-500 pt-1">
+                      {errors.email.message}
+                    </p>
+                  )}
                 </div>
 
                 <Button
-                  text="Submit"
+                  type="submit"
+                  disabled={loading}
+                  text={loading ? "Loading..." : "Submit"}
                   color="text-white"
                   extraClass="block w-full rounded-lg my-4"
                   bgColor="bg-amber-600"
@@ -76,15 +124,6 @@ export default function ForgotPassword() {
             <div className="text-3xl font-medium mt-24">Confirm email</div>
             <div>Comfirmation email has been sent.</div>
             <div className="flex gap-5 mt-3">
-              <Button
-                to="/forgot-password"
-                text="Try different email"
-                color="text-white"
-                bgColor="bg-purple-700"
-                bgHover="hover:bg-purple-800"
-                extraClass="mr-3"
-                trailingIcon={<ArrowRight className="inline" />}
-              />
               <Button
                 to="/home"
                 text="Back to home"

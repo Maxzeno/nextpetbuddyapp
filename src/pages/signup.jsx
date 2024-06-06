@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import imageSubmit from "../assets/message.png";
 import logo from "../assets/next-pet-nobg.png";
@@ -20,7 +20,6 @@ export default function Signup() {
   } = useForm();
 
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     setLoading(true);
