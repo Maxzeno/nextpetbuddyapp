@@ -173,6 +173,12 @@ const Navbar = () => {
                   >
                     Settings
                   </Link>
+                  <Link
+                    to="/logout"
+                    className="hover:bg-gray-200 rounded p-2 block my-2"
+                  >
+                    Logout
+                  </Link>
                 </div>
               )}
             </div>
@@ -327,6 +333,12 @@ const Navbar = () => {
                         className="hover:bg-gray-200 rounded p-2 block my-2"
                       >
                         Settings
+                      </Link>
+                      <Link
+                        to="/logout"
+                        className="hover:bg-gray-200 rounded p-2 block my-2"
+                      >
+                        Logout
                       </Link>
                     </div>
                   )}
