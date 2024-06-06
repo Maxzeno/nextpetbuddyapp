@@ -27,6 +27,8 @@ export default function ProductDetail() {
       <Navbar />
       {productLoading ? (
         <Loading extraClass="flex justify-center item-center pb-5" />
+      ) : productError ? (
+        <div className="py-3">{productError.detail}</div>
       ) : (
         <div className="mx-auto pt-5 w-[80vw] mb-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
