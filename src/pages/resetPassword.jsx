@@ -10,7 +10,9 @@ import submitHelper from "../helper/submit.js";
 
 export default function ResetPassword() {
   let location = useLocation();
-  console.log(location.pathname);
+  if (!location.pathname.endsWith("/")) {
+    location.pathname += "/";
+  }
 
   const {
     register,
