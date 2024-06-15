@@ -24,7 +24,7 @@ export default function CategoryDrop({ item }) {
         setOpenDropdown("category-drop");
       }
     }
-  }, []);
+  }, [queryParams]);
 
   return (
     <>
@@ -46,6 +46,7 @@ export default function CategoryDrop({ item }) {
           <div className="bg-white text-black p-2 w-full rounded">
             {item.breeds.map((breed, index) => (
               <Link
+                replace={true}
                 key={index}
                 to={`/product/?breed=${breed.id}${page ? "&page=" + page : ""}`}
                 className="hover:bg-gray-200 rounded p-2 block my-2"
