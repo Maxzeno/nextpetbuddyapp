@@ -11,7 +11,7 @@ import useFetch from "../hooks/useFetch.js";
 
 const Home = () => {
   const [categoryData, categoryLoading, categoryError] = useFetch(
-    "/pet",
+    "/pet/",
     false
   );
   const [petsData, petsLoading, petsError] = useFetch(
