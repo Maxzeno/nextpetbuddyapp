@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Dash, Plus, Trash } from "react-bootstrap-icons";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import jumImage from "../../assets/dog.jpg";
 import { setAmount } from "../../features/counter/totalPriceSlice";
@@ -15,7 +15,6 @@ export default function CartCard({ title, price, image, id, quantity }) {
     img = jumImage;
   }
 
-  const totalPrice = useSelector((state) => state.totalPrice.value);
   const dispatch = useDispatch();
 
   const [loading, setLoading] = useState(false);
