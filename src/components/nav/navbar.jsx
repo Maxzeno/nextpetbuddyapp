@@ -43,8 +43,6 @@ const Navbar = () => {
 
   const handleFornKeyPress = (event) => {
     if (event.key === "Enter") {
-      // Perform the search operation here
-      console.log(searchTerm);
       navigate(`/product/?search=${searchTerm}`);
     }
   };

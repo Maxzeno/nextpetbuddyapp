@@ -4,8 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import submitHelper from "../../helper/submit";
 
-export default async function PaymentButton({ amount, userData }) {
-  console.log(amount, "the amount");
+export default function PaymentButton({ amount, userData }) {
   const navigate = useNavigate();
 
   const [starting, setStart] = useState(false);
@@ -26,12 +25,10 @@ export default async function PaymentButton({ amount, userData }) {
   const onSuccess = (reference) => {
     navigate("/cart");
     toast.success("Your payment is been processed");
-    console.log(reference);
   };
 
   const onClose = () => {
     navigate("/cart");
-    console.log("closed");
   };
 
   const initializePayment = usePaystackPayment(config);
@@ -47,7 +44,6 @@ export default async function PaymentButton({ amount, userData }) {
           return;
         }
         config["metadata"]["order_id"] = result.id;
-        console.log(config);
 
         initializePayment({ onSuccess, onClose, config });
       }}

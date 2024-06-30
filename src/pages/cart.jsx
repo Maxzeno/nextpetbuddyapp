@@ -60,7 +60,9 @@ export default function Cart() {
                   {!userLoading &&
                     !userError &&
                     userData.length !== 0 &&
-                    totalPrice && <PaymentButton userData={userData} />}
+                    totalPrice && (
+                      <PaymentButton amount={totalPrice} userData={userData} />
+                    )}
                 </div>
               </>
             )}

@@ -26,7 +26,6 @@ export default function Signup() {
 
     try {
       const [result, errorObj] = await submitHelper("/user/", data, false);
-      console.log(errorObj, "errorObj");
       if (!errorObj) {
         toast.success("Signup successful");
         setSubmit(true);
