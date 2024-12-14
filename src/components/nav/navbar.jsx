@@ -24,13 +24,13 @@ const Navbar = () => {
     };
 
     return <nav className='border-b-2'>
-        <div className='hidden md:block w-[70vw] mx-auto my-5'>
+        <div className='hidden md:block w-[80vw] mx-auto my-5'>
             <div className="flex justify-between items-center mb-7">
                 <div className="pt-2">
                     <img src={logo} alt="" width={150} />
                 </div>
                 <div className='relative'>
-                    <input type="text" className='border w-[25vw] rounded-lg h-[40px] px-4 focus:outline-none focus:border-2' />
+                    <input placeholder='search for pets' type="text" className='border w-[25vw] rounded-lg h-[40px] px-4 focus:outline-none focus:border-2' />
                     <Search className='relative right-8 top-[-3px] inline text-gray-500' />
 
                 </div>
