@@ -36,12 +36,12 @@ const Navbar = () => {
                 </div>
                 <div>
                     <Button text="login" color="text-black" bgColor="bg-gray-200" bgHover="hover:bg-gray-300" extraClass="mr-3" />
-                    <Button text="signup" color="text-white" bgColor="bg-red-500" bgHover="hover:bg-red-600" />
+                    <Button text="signup" color="text-white" bgColor="bg-green-500" bgHover="hover:bg-green-600" />
                 </div>
             </div>
             <div className='flex items-center mb-5'>
                 <div className='mr-5 flex items-center  cursor-pointer' onClick={() => toggleDropdown("pets")}>
-                    <div className='bg-red-500 px-5 py-3 text-white rounded'>
+                    <div className='bg-green-500 px-5 py-3 text-white rounded'>
                         <GridFill className='inline mr-2' />
                         <span>Pets</span>
                     </div>
@@ -50,11 +50,11 @@ const Navbar = () => {
                         <Link to="#" className='hover:bg-gray-200 rounded p-2 block my-2'>one</Link>
                     </div>}
                 </div>
-                <Link to="/" className='mr-5 hover:text-red-500'>home</Link>
-                <Link to="/products" className='mr-5 hover:text-red-500'>product</Link>
-                <Link to="/contact" className='mr-5 hover:text-red-500'>contact</Link>
+                <Link to="/" className='mr-5 hover:text-green-500'>home</Link>
+                <Link to="/products" className='mr-5 hover:text-green-500'>product</Link>
+                <Link to="/contact" className='mr-5 hover:text-green-500'>contact</Link>
                 <div className='mr-5flex items-center cursor-pointer' onClick={() => toggleDropdown("drop")}>
-                    <div className='hover:text-red-500 '>
+                    <div className='hover:text-green-500 '>
                         <span className='mr-2'>drop</span>
                         <CaretDownFill className='inline' />
                     </div>
@@ -97,7 +97,7 @@ const Navbar = () => {
                             <div className='cursor-pointer' onClick={() => toggleDropdown("mobile")}><XLg className='text-[1.5em] leading-[0]' /></div>
                         </div>
                         <div className='cursor-pointer mb-4' onClick={() => toggleMobileDropdown("pets")}>
-                            <div className='bg-red-500 px-5 py-3 text-white rounded'>
+                            <div className='bg-green-500 px-5 py-3 text-white rounded'>
                                 <GridFill className='inline mr-2' />
                                 <span>Pets</span>
                             </div>
@@ -106,11 +106,11 @@ const Navbar = () => {
                                 <Link to="#" className='hover:bg-gray-200 rounded p-2 block my-2'>one</Link>
                             </div>}
                         </div>
-                        <Link to="/" className='mr-5 hover:text-red-500 block py-3 border-b'>home</Link>
-                        <Link to="/products" className='mr-5 hover:text-red-500 block py-3 border-b'>product</Link>
-                        <Link to="/contact" className='mr-5 hover:text-red-500 block py-3 border-b'>contact</Link>
+                        <Link to="/" className='mr-5 hover:text-green-500 block py-3 border-b'>home</Link>
+                        <Link to="/products" className='mr-5 hover:text-green-500 block py-3 border-b'>product</Link>
+                        <Link to="/contact" className='mr-5 hover:text-green-500 block py-3 border-b'>contact</Link>
                         <div className='mr-5flex items-center cursor-pointer' onClick={() => toggleMobileDropdown("drop")}>
-                            <div className='hover:text-red-500 block py-3 border-b'>
+                            <div className='hover:text-green-500 block py-3 border-b'>
                                 <span className='mr-2'>drop</span>
                                 <CaretDownFill className='inline' />
                             </div>
@@ -122,7 +122,7 @@ const Navbar = () => {
                     </div>
                     <div className='py-3 px-5'>
                         <Button text="login" color="text-black" bgColor="bg-gray-200" bgHover="hover:bg-gray-300" extraClass="block w-full mb-3" />
-                        <Button text="signup" color="text-white" bgColor="bg-red-500" bgHover="hover:bg-red-600" extraClass='block w-full' />
+                        <Button text="signup" color="text-white" bgColor="bg-green-500" bgHover="hover:bg-green-600" extraClass='block w-full' />
                     </div>
                 </div>
             )}

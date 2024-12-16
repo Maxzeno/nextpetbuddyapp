@@ -15,7 +15,7 @@ export default function Newsletter() {
                 <div className='flex gap-3'>
                     <input placeholder='Email Address' type="text" className='border w-[30vw] rounded-lg h-[40px] px-4 focus:outline-none focus:border-2' />
 
-                    <Button text="Subscribe" color="text-white" bgColor="bg-red-500" bgHover="hover:bg-red-600" />
+                    <Button text="Subscribe" color="text-white" bgColor="bg-green-500" bgHover="hover:bg-green-600" />
 
                 </div>
             </div>

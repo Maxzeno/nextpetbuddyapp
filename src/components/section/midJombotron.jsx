@@ -11,7 +11,7 @@ export default function MidJumbotron() {
             <div className='font-normal text-xl mb-3'>
                 Everything you want at your finger tips. find your buddy.
             </div>
-            <Button text="Start Shopping" color="text-white" bgColor="bg-red-500" bgHover="hover:bg-red-600" />
+            <Button text="Start Shopping" color="text-white" bgColor="bg-green-500" bgHover="hover:bg-green-600" />
 
         </div>
         <div className='flex-1 hidden lg:block'>
