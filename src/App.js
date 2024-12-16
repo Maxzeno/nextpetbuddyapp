@@ -7,13 +7,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/home.jsx';
 import Counter from './pages/counter.jsx';
 import ContactUs from './pages/contactUs.jsx';
+import Products from './pages/products.jsx';
 
 
 /* root routes */
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home></Home>
+    element: <Home />
   },
   {
     path: '/contact',
@@ -21,7 +22,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/counter',
-    element: <Counter></Counter>
+    element: <Counter />
+  },
+  {
+    path: '/products',
+    element: <Products />
   }
 ]);
 

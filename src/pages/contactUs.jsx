@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../components/nav/navbar'
 import Button from '../components/button/button'
+import Footer from '../components/section/footer.jsx';
 
 export default function ContactUs() {
 
@@ -26,6 +27,8 @@ export default function ContactUs() {
 
                 </form>
             </div>
+            <Footer />
+
         </>
 
     )
