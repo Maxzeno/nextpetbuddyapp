@@ -8,7 +8,7 @@ export default function ContactUs() {
     return (
         <>
             <Navbar />
-            <div className='mx-auto pt-5 w-[80vw]'>
+            <div className='mx-auto pt-5 w-[80vw] mb-5'>
                 <div className='font-medium text-3xl pb-5'>
                     Contact us
                 </div>
