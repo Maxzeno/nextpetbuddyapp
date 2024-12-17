@@ -11,6 +11,7 @@ import Login from './pages/login.jsx';
 import Signup from './pages/signup.jsx';
 import ForgotPassword from './pages/forgotPassword.jsx';
 import ResetPassword from './pages/resetPassword.jsx';
+import ProductDetail from './pages/products_detail.jsx';
 
 
 /* root routes */
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: '/products',
     element: <Products />
+  },
+  {
+    path: '/product-detail/:productId',
+    element: <ProductDetail />
   },
   {
     path: '/login',

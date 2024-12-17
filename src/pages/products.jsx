@@ -2,7 +2,6 @@ import React from 'react'
 import Navbar from '../components/nav/navbar'
 import Footer from '../components/section/footer.jsx';
 import PetCard from '../components/card/petsCard.jsx';
-import { ChevronRight } from "react-bootstrap-icons";
 import CategoryDrop from '../components/section/categoryDrop.jsx';
 
 export default function Products() {
