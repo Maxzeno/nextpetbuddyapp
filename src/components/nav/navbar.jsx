@@ -93,20 +93,20 @@ const Navbar = () => {
             )}
           </div>
           <Link to="/" className="mr-5 hover:text-amber-500">
-            home
+            Home
           </Link>
           <Link to="/product" className="mr-5 hover:text-amber-500">
-            product
+            Product
           </Link>
           <Link to="/contact" className="mr-5 hover:text-amber-500">
-            contact
+            Contact
           </Link>
           <div
             className="mr-5flex items-center cursor-pointer"
             onClick={() => toggleDropdown("drop")}
           >
             <div className="hover:text-amber-500 ">
-              <span className="mr-2">drop</span>
+              <span className="mr-2">Account</span>
               <CaretDownFill className="inline" />
             </div>
             {openDropdown === "drop" && (
@@ -118,13 +118,25 @@ const Navbar = () => {
                   to="#"
                   className="hover:bg-gray-200 rounded p-2 block my-2"
                 >
-                  one
+                  Cart
                 </Link>
                 <Link
                   to="#"
                   className="hover:bg-gray-200 rounded p-2 block my-2"
                 >
-                  one
+                  Orders
+                </Link>
+                <Link
+                  to="#"
+                  className="hover:bg-gray-200 rounded p-2 block my-2"
+                >
+                  Address
+                </Link>
+                <Link
+                  to="#"
+                  className="hover:bg-gray-200 rounded p-2 block my-2"
+                >
+                  Settings
                 </Link>
               </div>
             )}
@@ -177,7 +189,7 @@ const Navbar = () => {
         )}
 
         {openDropdown === "mobile" && (
-          <div className="w-full h-full bg-white fixed top-0 left-0 flex justify-between flex-col">
+          <div className="w-full h-full overflow-y-scroll bg-white fixed top-0 left-0 flex justify-between flex-col">
             <div className="py-3 px-5">
               <div className="flex justify-between mb-5 pt-2">
                 <div>
@@ -215,26 +227,23 @@ const Navbar = () => {
                   </div>
                 )}
               </div>
-              <Link
-                to="/"
-                className="mr-5 hover:text-amber-500 block py-3 border-b"
-              >
-                home
+              <Link to="/" className="hover:text-amber-500 block py-3 border-b">
+                Home
               </Link>
               <Link
                 to="/product"
-                className="mr-5 hover:text-amber-500 block py-3 border-b"
+                className="hover:text-amber-500 block py-3 border-b"
               >
-                product
+                Product
               </Link>
               <Link
                 to="/contact"
-                className="mr-5 hover:text-amber-500 block py-3 border-b"
+                className="hover:text-amber-500 block py-3 border-b"
               >
-                contact
+                Contact
               </Link>
               <div
-                className="mr-5flex items-center cursor-pointer"
+                className="cursor-pointer"
                 onClick={() => toggleMobileDropdown("drop")}
               >
                 <div className="hover:text-amber-500 block py-3 border-b">
@@ -243,20 +252,32 @@ const Navbar = () => {
                 </div>
                 {openMobileDropdown === "drop" && (
                   <div
-                    className="absolute z-10 bg-white p-2 w-[calc(100%-2.5rem)] rounded top-[330px]"
+                    className="relative bg-white p-2 rounded"
                     style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.12)" }}
                   >
                     <Link
                       to="#"
                       className="hover:bg-gray-200 rounded p-2 block my-2"
                     >
-                      one
+                      Cart
                     </Link>
                     <Link
                       to="#"
                       className="hover:bg-gray-200 rounded p-2 block my-2"
                     >
-                      one
+                      Orders
+                    </Link>
+                    <Link
+                      to="#"
+                      className="hover:bg-gray-200 rounded p-2 block my-2"
+                    >
+                      Address
+                    </Link>
+                    <Link
+                      to="#"
+                      className="hover:bg-gray-200 rounded p-2 block my-2"
+                    >
+                      Settings
                     </Link>
                   </div>
                 )}
