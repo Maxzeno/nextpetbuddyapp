@@ -14,7 +14,7 @@ export default function Login() {
             <span>Don't have an account</span>
             <Link
               to="/signup"
-              className="text-green-500 hover:text-green-400 ml-1"
+              className="text-amber-700 hover:text-amber-600 ml-1"
             >
               Signup
             </Link>
@@ -45,7 +45,7 @@ export default function Login() {
               />
             </div>
             <div className="text-right">
-              <a href="/forgot-password" className="hover:text-gray-500">
+              <a href="/forgot-password" className="hover:text-amber-600">
                 Forgot password
               </a>
             </div>
@@ -54,13 +54,13 @@ export default function Login() {
               text="Login"
               color="text-white"
               extraClass="block w-full rounded-lg my-4"
-              bgColor="bg-green-600"
-              bgHover="hover:bg-green-700"
+              bgColor="bg-amber-600"
+              bgHover="hover:bg-amber-700"
             />
             <div>
               <span>Don’t have an account? </span>
               <Link
-                className="text-green-500 hover:text-green-400 ml-1"
+                className="text-amber-700 hover:text-amber-600 ml-1"
                 to="/signup"
               >
                 {" "}

@@ -14,7 +14,7 @@ export default function Signup() {
             <span>Already have an account? </span>
             <Link
               to="/login"
-              className="text-green-500 hover:text-green-400 ml-1"
+              className="text-amber-700 hover:text-amber-600 ml-1"
             >
               Sign in
             </Link>
@@ -59,11 +59,11 @@ export default function Signup() {
 
             <div className="text-sm">
               <span>By continuing, you agree to our</span>
-              <Link className="text-green-500 hover:text-green-400 ml-1" to="#">
+              <Link className="text-amber-700 hover:text-amber-600 ml-1" to="#">
                 Terms of Service
               </Link>
               <span> & </span>
-              <Link className="text-green-500 hover:text-green-400 ml-1" to="#">
+              <Link className="text-amber-700 hover:text-amber-600 ml-1" to="#">
                 Privacy Policy
               </Link>
             </div>
@@ -72,13 +72,13 @@ export default function Signup() {
               text="Signup"
               color="text-white"
               extraClass="block w-full rounded-lg my-4"
-              bgColor="bg-green-600"
-              bgHover="hover:bg-green-700"
+              bgColor="bg-amber-600"
+              bgHover="hover:bg-amber-700"
             />
             <div>
               <span>Have an account</span>
               <Link
-                className="text-green-500 hover:text-green-400 ml-1"
+                className="text-amber-700 hover:text-amber-600 ml-1"
                 to="/login"
               >
                 Login

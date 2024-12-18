@@ -24,8 +24,8 @@ export default function Newsletter() {
             <Button
               text="Subscribe"
               color="text-white"
-              bgColor="bg-green-500"
-              bgHover="hover:bg-green-600"
+              bgColor="bg-amber-700"
+              bgHover="hover:bg-amber-800"
             />
           </div>
         </div>

@@ -1,4 +1,4 @@
-import logo from "../../assets/next-pet-nobg.png";
+import logo from "../../assets/Next_Pet_buddy.png";
 
 const NavbarAuth = ({ child }) => {
   return (
