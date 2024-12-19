@@ -41,7 +41,7 @@ const Navbar = () => {
             <input
               placeholder="search for pets"
               type="text"
-              className="border w-[30vw] rounded-lg h-[40px] px-4 focus:outline-none focus:border-2"
+              className="border w-[30vw] rounded-lg h-[40px] px-4 focus:outline-2 outline-gray-300"
             />
             <Search className="relative right-8 top-[-3px] inline text-gray-500" />
           </div>
@@ -181,7 +181,7 @@ const Navbar = () => {
               <input
                 placeholder="type"
                 type="text"
-                className="border w-full rounded-lg h-[40px] px-4 focus:outline-none focus:border-2"
+                className="border w-full rounded-lg h-[40px] px-4 focus:outline-2 outline-gray-300"
               />
               <Search className="relative top-[-35px] left-[calc(80vw-50px)] inline text-gray-500" />
             </div>

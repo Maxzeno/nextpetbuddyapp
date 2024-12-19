@@ -15,12 +15,12 @@ export default function ContactUs() {
           <input
             placeholder="Email Address"
             type="text"
-            className="border w-full rounded-lg h-[40px] px-4 focus:outline-none focus:border-2 mb-5"
+            className="border w-full rounded-lg h-[40px] px-4 focus:outline-2 outline-gray-300 mb-5"
           />
 
           <div className="mb-3">Message</div>
           <textarea
-            className="border w-full rounded-lg h-[80px] px-4 focus:outline-none focus:border-2 mb-5"
+            className="border w-full rounded-lg h-[80px] py-2 px-4 focus:outline-2 outline-gray-300 mb-5"
             placeholder="Message"
           ></textarea>
           <Button
