@@ -3,6 +3,7 @@ import './index.css';
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
+import Address from './pages/address.jsx';
 import Cart from './pages/cart.jsx';
 import ContactUs from './pages/contactUs.jsx';
 import ForgotPassword from './pages/forgotPassword.jsx';
@@ -11,6 +12,7 @@ import Login from './pages/login.jsx';
 import Products from './pages/product.jsx';
 import ProductDetail from './pages/products_detail.jsx';
 import ResetPassword from './pages/resetPassword.jsx';
+import Settings from './pages/settings.jsx';
 import Signup from './pages/signup.jsx';
 
 
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
   {
     path: '/product',
     element: <Products />
+  },
+  {
+    path: '/address',
+    element: <Address />
+  },
+   {
+    path: '/settings',
+    element: <Settings />
   },
   {
     path: '/product/:productId',
