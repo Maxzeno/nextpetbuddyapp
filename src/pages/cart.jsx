@@ -37,12 +37,16 @@ export default function Cart() {
               </div>
             </div>
             <div className="border-t-2 pt-5 mt-5 font-medium flex justify-between">
+              <div>Delivery fee</div>
+              <div> ₦1,000</div>
+            </div>
+            <div className="pt-5 font-medium flex justify-between">
               <div>Total</div>
-              <div> ₦2,167.72</div>
+              <div> ₦3,167.72</div>
             </div>
             <div className="text-right pt-5">
               <Button
-                text="Checkout"
+                text="Make Payment"
                 color="text-white"
                 bgColor="bg-amber-700"
                 bgHover="hover:bg-amber-800"

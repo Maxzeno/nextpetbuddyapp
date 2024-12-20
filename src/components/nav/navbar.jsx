@@ -115,25 +115,25 @@ const Navbar = () => {
                 style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.12)" }}
               >
                 <Link
-                  to="#"
+                  to="/cart"
                   className="hover:bg-gray-200 rounded p-2 block my-2"
                 >
                   Cart
                 </Link>
                 <Link
-                  to="#"
+                  to="/order"
                   className="hover:bg-gray-200 rounded p-2 block my-2"
                 >
                   Orders
                 </Link>
                 <Link
-                  to="#"
+                  to="/address"
                   className="hover:bg-gray-200 rounded p-2 block my-2"
                 >
                   Address
                 </Link>
                 <Link
-                  to="#"
+                  to="/settings"
                   className="hover:bg-gray-200 rounded p-2 block my-2"
                 >
                   Settings
@@ -262,7 +262,7 @@ const Navbar = () => {
                       Cart
                     </Link>
                     <Link
-                      to="/orders"
+                      to="/order"
                       className="hover:bg-gray-200 rounded p-2 block my-2"
                     >
                       Orders

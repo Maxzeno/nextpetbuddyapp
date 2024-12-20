@@ -3,7 +3,7 @@ import { Plus } from "react-bootstrap-icons";
 import image1 from "../assets/hero-pet.png";
 import image2 from "../assets/message.png";
 import PetCard from "../components/card/petsCard.jsx";
-import Navbar from "../components/nav/navbar";
+import Navbar from "../components/nav/navbar.jsx";
 import Footer from "../components/section/footer.jsx";
 
 export default function ProductDetail() {

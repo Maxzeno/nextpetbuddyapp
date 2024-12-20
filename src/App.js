@@ -9,8 +9,10 @@ import ContactUs from './pages/contactUs.jsx';
 import ForgotPassword from './pages/forgotPassword.jsx';
 import Home from './pages/home.jsx';
 import Login from './pages/login.jsx';
+import OrderDetail from './pages/orderDetail.jsx';
+import Orders from './pages/orders.jsx';
 import Products from './pages/product.jsx';
-import ProductDetail from './pages/products_detail.jsx';
+import ProductDetail from './pages/productsDetail.jsx';
 import ResetPassword from './pages/resetPassword.jsx';
 import Settings from './pages/settings.jsx';
 import Signup from './pages/signup.jsx';
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
   {
     path: '/product',
     element: <Products />
+  },
+  {
+    path: '/order',
+    element: <Orders />
+  },
+  {
+    path: '/order/:orderId',
+    element: <OrderDetail />
   },
   {
     path: '/address',
