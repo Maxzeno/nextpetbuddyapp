@@ -84,7 +84,8 @@ export default function App() {
   return (
     <main>
       <ToastContainer />
-      <RouterProvider router={router}></RouterProvider>
+      <RouterProvider router={router}>
+      </RouterProvider>
     </main>
   );
 }

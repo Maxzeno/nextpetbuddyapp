@@ -7,6 +7,7 @@ import image from "../assets/signin-g.svg";
 import Button from "../components/button/button";
 import NavbarAuth from "../components/nav/navbarAuth.jsx";
 import Footer from "../components/section/footer.jsx";
+import submitHelper from "../helper/submit.js";
 
 export default function Login() {
   const {
@@ -22,28 +23,15 @@ export default function Login() {
     setLoading(true);
 
     try {
-      const response = await fetch(
-        `${process.env.REACT_APP_API_BASE_URL}/token/`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
-
-      const result = await response.json();
-
-      if (response.ok) {
+      const [result, errorObj] = await submitHelper("/token/", data, false);
+      if (!errorObj) {
         Cookies.set("token", result.token, { expires: 90 });
-
         navigate("/home");
       } else {
-        toast.error(result.detail || "An error occurred");
+        toast.error(errorObj.detail || "An error occurred");
       }
     } catch (error) {
-      toast.error("An error occurred. Please try again.");
+      toast.error("An error occurred");
     } finally {
       setLoading(false);
     }
