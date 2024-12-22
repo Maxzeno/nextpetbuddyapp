@@ -9,7 +9,7 @@ export default function PetsCategory({ text, image, pet }) {
     img = petImage;
   }
   return (
-    <Link to={`product/?pet=${pet}`}>
+    <Link to={`/product/?pet=${pet}`}>
       <div className="p-5 border hover:border-amber-500 cursor-pointer rounded mr-5 flex-grow-0 flex-shrink-0">
         <div className="mb-5">
           <img

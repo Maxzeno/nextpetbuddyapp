@@ -25,7 +25,7 @@ export default function PetCard({ title, breed, price, image, id, pet }) {
           {title}
         </Link>
         <Link
-          to={`product/?pet=${pet}`}
+          to={`/product/?pet=${pet}`}
           className="font-normal text-sm text-amber-600 pb-3 mb-3 border-b-2 block"
         >
           {breed}
