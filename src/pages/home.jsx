@@ -39,7 +39,7 @@ const Home = () => {
         {categoryLoading && (
           <Loading extraClass="flex justify-center item-center pb-5" />
         )}
-        {categoryError && <div>{categoryError}</div>}
+        {categoryError && <div>Failed to fetch</div>}
         <MidJumbotron />
         <div className="font-semibold text-2xl my-5">Popular Pets</div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -60,7 +60,7 @@ const Home = () => {
         {petsLoading && (
           <Loading extraClass="flex justify-center item-center pb-5" />
         )}
-        {petsError && <div>{petsError}</div>}
+        {petsError && <div>Failed to fetch</div>}
       </div>
       <Newsletter />
       <Footer />
