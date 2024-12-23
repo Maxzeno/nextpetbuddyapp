@@ -75,7 +75,7 @@ export default function ForgotPassword() {
             <img src={logo} alt="" width={150} />
             <div className="text-3xl font-medium mt-24">Confirm email</div>
             <div>Comfirmation email has been sent.</div>
-            <div className="flex gap-5">
+            <div className="flex gap-5 mt-3">
               <Button
                 text="Try different email"
                 color="text-white"
