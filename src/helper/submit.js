@@ -22,7 +22,10 @@ const submitHelper = async (url, body, requireAuth=true, method="POST") => {
     data = await response.json();
     if (!response.ok) {
       errorObj = data
-    }
+  }
+  
+    console.log(data);
+
   return [ data, errorObj ];
 };
 
