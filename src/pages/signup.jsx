@@ -186,6 +186,7 @@ export default function Signup() {
             <div>Comfirmation email has been sent.</div>
             <div className="flex gap-5 mt-3">
               <Button
+                to="/home"
                 text="Back to home"
                 color="text-white"
                 bgColor="bg-amber-600"

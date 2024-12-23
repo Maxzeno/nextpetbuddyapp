@@ -77,6 +77,7 @@ export default function ForgotPassword() {
             <div>Comfirmation email has been sent.</div>
             <div className="flex gap-5 mt-3">
               <Button
+                to="/forgot-password"
                 text="Try different email"
                 color="text-white"
                 bgColor="bg-purple-700"
@@ -85,6 +86,7 @@ export default function ForgotPassword() {
                 trailingIcon={<ArrowRight className="inline" />}
               />
               <Button
+                to="/home"
                 text="Back to home"
                 color="text-white"
                 bgColor="bg-amber-500"
