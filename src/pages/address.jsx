@@ -11,7 +11,6 @@ import useFetch from "../hooks/useFetch.js";
 
 export default function Address() {
   const [userData, userLoading, userError] = useFetch("/auth-user");
-  console.log(userData);
 
   const {
     register,
