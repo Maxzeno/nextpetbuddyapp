@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   CaretDownFill,
+  Cart,
   GridFill,
   List,
   Search,
@@ -8,9 +9,15 @@ import {
 } from "react-bootstrap-icons";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/Next_Pet_buddy.png";
+import useFetch from "../../hooks/useFetch";
 import Button from "../button/button";
 
 const Navbar = () => {
+  const [userData, userLoading, userError] = useFetch("/auth-user");
+  const [categoryData, categoryLoading, categoryError] = useFetch(
+    "/pet",
+    false
+  );
   const navigate = useNavigate();
 
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -59,23 +66,32 @@ const Navbar = () => {
             />
             <Search className="relative right-8 top-[-3px] inline text-gray-500" />
           </div>
-          <div>
-            <Button
-              to="/login"
-              text="login"
-              color="text-black"
-              bgColor="bg-gray-200"
-              bgHover="hover:bg-gray-300"
-              extraClass="mr-3"
-            />
-            <Button
-              to="/signup"
-              text="signup"
-              color="text-white"
-              bgColor="bg-amber-700"
-              bgHover="hover:bg-amber-800"
-            />
-          </div>
+          {userData ? (
+            <div>
+              <Cart className="text-[1.1em] leading-[0]" />
+              <div className="bg-amber-900 text-white rounded-full w-5 h-5 flex justify-center items-center text-xs relative top-[-30px] right-[-8px]">
+                5
+              </div>
+            </div>
+          ) : (
+            <div>
+              <Button
+                to="/login"
+                text="login"
+                color="text-black"
+                bgColor="bg-gray-200"
+                bgHover="hover:bg-gray-300"
+                extraClass="mr-3"
+              />
+              <Button
+                to="/signup"
+                text="signup"
+                color="text-white"
+                bgColor="bg-amber-700"
+                bgHover="hover:bg-amber-800"
+              />
+            </div>
+          )}
         </div>
         <div className="flex items-center mb-5">
           <div
@@ -91,18 +107,18 @@ const Navbar = () => {
                 className="absolute z-10 bg-white text-black p-2 w-[200px] rounded top-[165px]"
                 style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.12)" }}
               >
-                <Link
-                  to="#"
-                  className="hover:bg-gray-200 rounded p-2 block my-2"
-                >
-                  one
-                </Link>
-                <Link
-                  to="#"
-                  className="hover:bg-gray-200 rounded p-2 block my-2"
-                >
-                  one
-                </Link>
+                {!categoryLoading &&
+                  !categoryError &&
+                  categoryData.map((item, index) => (
+                    <Link
+                      key={index}
+                      to={`/product/?pet=${item.id}`}
+                      className="hover:bg-gray-200 rounded p-2 block my-2"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                {categoryLoading && <div>Loading...</div>}
               </div>
             )}
           </div>
@@ -170,6 +186,14 @@ const Navbar = () => {
               className="text-[1.5em] cursor-pointer leading-[0] inline text-black mr-3"
               onClick={() => toggleDropdown("search")}
             />
+            {userData && (
+              <>
+                <Cart className="text-[1.5em] cursor-pointer leading-[0] inline text-black" />
+                <div className="bg-amber-900 text-white rounded-full w-5 h-5 flex justify-center items-center text-xs relative top-[-10px] right-[10px]">
+                  5
+                </div>
+              </>
+            )}
             <List
               className="text-[1.7em] cursor-pointer leading-[0] inline text-black"
               onClick={() => toggleDropdown("mobile")}
@@ -228,18 +252,18 @@ const Navbar = () => {
                 </div>
                 {openMobileDropdown === "pets" && (
                   <div className="bg-white text-black p-2 mt-2 rounded top-[165px] border">
-                    <Link
-                      to="#"
-                      className="hover:bg-gray-200 rounded p-2 block my-2"
-                    >
-                      one
-                    </Link>
-                    <Link
-                      to="#"
-                      className="hover:bg-gray-200 rounded p-2 block my-2"
-                    >
-                      one
-                    </Link>
+                    {!categoryLoading &&
+                      !categoryError &&
+                      categoryData.map((item, index) => (
+                        <Link
+                          key={index}
+                          to={`/product/?pet=${item.id}`}
+                          className="hover:bg-gray-200 rounded p-2 block my-2"
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    {categoryLoading && <div>Loading...</div>}
                   </div>
                 )}
               </div>
@@ -299,24 +323,26 @@ const Navbar = () => {
                 )}
               </div>
             </div>
-            <div className="py-3 px-5">
-              <Button
-                to="/login"
-                text="login"
-                color="text-black"
-                bgColor="bg-gray-200"
-                bgHover="hover:bg-gray-300"
-                extraClass="block w-full mb-3"
-              />
-              <Button
-                to="/signup"
-                text="signup"
-                color="text-white"
-                bgColor="bg-amber-700"
-                bgHover="hover:bg-amber-800"
-                extraClass="block w-full"
-              />
-            </div>
+            {!userData && (
+              <div className="py-3 px-5">
+                <Button
+                  to="/login"
+                  text="login"
+                  color="text-black"
+                  bgColor="bg-gray-200"
+                  bgHover="hover:bg-gray-300"
+                  extraClass="block w-full mb-3"
+                />
+                <Button
+                  to="/signup"
+                  text="signup"
+                  color="text-white"
+                  bgColor="bg-amber-700"
+                  bgHover="hover:bg-amber-800"
+                  extraClass="block w-full"
+                />
+              </div>
+            )}
           </div>
         )}
       </div>
