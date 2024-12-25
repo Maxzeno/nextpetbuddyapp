@@ -1,13 +1,69 @@
+import Cookies from "js-cookie";
+import { jwtDecode } from "jwt-decode";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import petImage from "../../assets/hero-pet.png";
+import submitHelper from "../../helper/submit";
 
-export default function PetCard({ title, breed, price, image, id, pet }) {
+export default function PetCard({
+  title,
+  breed,
+  price,
+  image,
+  id,
+  pet,
+  orderitem,
+}) {
   let img;
   if (image) {
     img = image;
   } else {
     img = petImage;
   }
+
+  const token = Cookies.get("token") || "";
+  const jwtBody = jwtDecode(token);
+
+  const [loading, setLoading] = useState(false);
+  const [cartId, setCartId] = useState(orderitem ? orderitem.id : null);
+
+  const toogleCart = async () => {
+    setLoading(true);
+
+    const body = {
+      quantity: 1,
+      animal: id,
+      buyer: jwtBody.user_id,
+    };
+    try {
+      const cartUserId = cartId;
+      const [result, errorObj] = await submitHelper(
+        cartUserId ? `/cart/${cartUserId}/` : "/cart/",
+        cartUserId ? {} : body,
+        true,
+        cartUserId ? "DELETE" : "POST"
+      );
+      if (cartId) {
+        setCartId(null);
+      } else {
+        setCartId(result.id);
+      }
+
+      if (!errorObj) {
+        toast.success(
+          cartId ? "Product removed from cart" : "Product added to cart"
+        );
+      } else {
+        toast.error(errorObj.detail || "An error occurred");
+      }
+    } catch (error) {
+      toast.error("An error occurred");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div
       className="border hover:border-amber-500 cursor-pointer inline-block rounded-lg"
@@ -32,8 +88,11 @@ export default function PetCard({ title, breed, price, image, id, pet }) {
         </Link>
         <div className="flex justify-between">
           <div className="font-normal">{price}</div>
-          <button className="border rounded-3xl py-2 px-3 border-amber-500 hover:bg-gray-100">
-            ADD
+          <button
+            onClick={() => toogleCart()}
+            className="border rounded-3xl py-2 px-3 border-amber-500 hover:bg-gray-100"
+          >
+            {loading ? "LOADING.." : cartId ? "REMOVE" : "ADD"}
           </button>
         </div>
       </div>
