@@ -52,9 +52,9 @@ const Navbar = () => {
       <div className="hidden md:block w-[80vw] mx-auto my-5">
         <div className="flex justify-between items-center mb-7">
           <div className="pt-2">
-            <a href="/">
+            <Link to="/">
               <img src={logo} alt="" width={150} />
-            </a>
+            </Link>
           </div>
           <div className="relative">
             <input
@@ -68,10 +68,12 @@ const Navbar = () => {
           </div>
           {userData ? (
             <div>
-              <Cart className="text-[1.1em] leading-[0]" />
-              <div className="bg-amber-900 text-white rounded-full w-5 h-5 flex justify-center items-center text-xs relative top-[-30px] right-[-8px]">
-                5
-              </div>
+              <Link to="/cart">
+                <Cart className="text-[1.1em] leading-[0]" />
+                <div className="bg-amber-900 text-white rounded-full w-5 h-5 flex justify-center items-center text-xs relative top-[-30px] right-[-8px]">
+                  5
+                </div>
+              </Link>
             </div>
           ) : (
             <div>
@@ -177,9 +179,9 @@ const Navbar = () => {
       <div className="block md:hidden px-5 py-3">
         <div className="flex justify-between">
           <div className="pt-2">
-            <a href="/">
+            <Link to="/">
               <img src={logo} alt="" width={100} />
-            </a>
+            </Link>
           </div>
           <div className="flex items-center">
             <Search
@@ -188,10 +190,12 @@ const Navbar = () => {
             />
             {userData && (
               <>
-                <Cart className="text-[1.5em] cursor-pointer leading-[0] inline text-black" />
-                <div className="bg-amber-900 text-white rounded-full w-5 h-5 flex justify-center items-center text-xs relative top-[-10px] right-[10px]">
-                  5
-                </div>
+                <Link to="/cart">
+                  <Cart className="text-[1.5em] cursor-pointer leading-[0] inline text-black" />
+                  <div className="bg-amber-900 text-white rounded-full w-5 h-5 flex justify-center items-center text-xs relative top-[-10px] right-[10px]">
+                    5
+                  </div>
+                </Link>
               </>
             )}
             <List
