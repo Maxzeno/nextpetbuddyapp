@@ -1,3 +1,5 @@
+import Cookies from "js-cookie";
+import { jwtDecode } from "jwt-decode";
 import { useState } from "react";
 import {
   CaretDownFill,
@@ -13,7 +15,9 @@ import useFetch from "../../hooks/useFetch";
 import Button from "../button/button";
 
 const Navbar = () => {
-  const [userData, userLoading, userError] = useFetch("/auth-user");
+  const token = Cookies.get("token") || "";
+  const jwtBody = jwtDecode(token);
+
   const [categoryData, categoryLoading, categoryError] = useFetch(
     "/pet",
     false
@@ -66,13 +70,13 @@ const Navbar = () => {
             />
             <Search className="relative right-8 top-[-3px] inline text-gray-500" />
           </div>
-          {userData ? (
+          {jwtBody.user_id ? (
             <div>
               <Link to="/cart">
                 <Cart className="text-[1.1em] leading-[0]" />
-                <div className="bg-amber-900 text-white rounded-full w-5 h-5 flex justify-center items-center text-xs relative top-[-30px] right-[-8px]">
+                {/* <div className="bg-amber-900 text-white rounded-full w-5 h-5 flex justify-center items-center text-xs relative top-[-30px] right-[-8px]">
                   5
-                </div>
+                </div> */}
               </Link>
             </div>
           ) : (
@@ -188,13 +192,13 @@ const Navbar = () => {
               className="text-[1.5em] cursor-pointer leading-[0] inline text-black mr-3"
               onClick={() => toggleDropdown("search")}
             />
-            {userData && (
+            {jwtBody.user_id && (
               <>
                 <Link to="/cart">
                   <Cart className="text-[1.5em] cursor-pointer leading-[0] inline text-black" />
-                  <div className="bg-amber-900 text-white rounded-full w-5 h-5 flex justify-center items-center text-xs relative top-[-10px] right-[10px]">
+                  {/* <div className="bg-amber-900 text-white rounded-full w-5 h-5 flex justify-center items-center text-xs relative top-[-10px] right-[10px]">
                     5
-                  </div>
+                  </div> */}
                 </Link>
               </>
             )}
@@ -327,7 +331,7 @@ const Navbar = () => {
                 )}
               </div>
             </div>
-            {!userData && (
+            {!jwtBody.user_id && (
               <div className="py-3 px-5">
                 <Button
                   to="/login"
