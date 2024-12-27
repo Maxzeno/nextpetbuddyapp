@@ -135,46 +135,48 @@ const Navbar = () => {
           <Link to="/contact" className="mr-5 hover:text-amber-500">
             Contact
           </Link>
-          <div
-            className="mr-5flex items-center cursor-pointer"
-            onClick={() => toggleDropdown("drop")}
-          >
-            <div className="hover:text-amber-500 ">
-              <span className="mr-2">Account</span>
-              <CaretDownFill className="inline" />
-            </div>
-            {openDropdown === "drop" && (
-              <div
-                className="absolute z-10 bg-white p-2 w-[200px] rounded top-[165px]"
-                style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.12)" }}
-              >
-                <Link
-                  to="/cart"
-                  className="hover:bg-gray-200 rounded p-2 block my-2"
-                >
-                  Cart
-                </Link>
-                <Link
-                  to="/order"
-                  className="hover:bg-gray-200 rounded p-2 block my-2"
-                >
-                  Orders
-                </Link>
-                <Link
-                  to="/address"
-                  className="hover:bg-gray-200 rounded p-2 block my-2"
-                >
-                  Address
-                </Link>
-                <Link
-                  to="/settings"
-                  className="hover:bg-gray-200 rounded p-2 block my-2"
-                >
-                  Settings
-                </Link>
+          {token && (
+            <div
+              className="mr-5flex items-center cursor-pointer"
+              onClick={() => toggleDropdown("drop")}
+            >
+              <div className="hover:text-amber-500 ">
+                <span className="mr-2">Account</span>
+                <CaretDownFill className="inline" />
               </div>
-            )}
-          </div>
+              {openDropdown === "drop" && (
+                <div
+                  className="absolute z-10 bg-white p-2 w-[200px] rounded top-[165px]"
+                  style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.12)" }}
+                >
+                  <Link
+                    to="/cart"
+                    className="hover:bg-gray-200 rounded p-2 block my-2"
+                  >
+                    Cart
+                  </Link>
+                  <Link
+                    to="/order"
+                    className="hover:bg-gray-200 rounded p-2 block my-2"
+                  >
+                    Orders
+                  </Link>
+                  <Link
+                    to="/address"
+                    className="hover:bg-gray-200 rounded p-2 block my-2"
+                  >
+                    Address
+                  </Link>
+                  <Link
+                    to="/settings"
+                    className="hover:bg-gray-200 rounded p-2 block my-2"
+                  >
+                    Settings
+                  </Link>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
 
@@ -193,7 +195,7 @@ const Navbar = () => {
             {token && (
               <>
                 <Link to="/cart">
-                  <Cart className="text-[1.5em] cursor-pointer leading-[0] inline text-black" />
+                  <Cart className="text-[1.5em] cursor-pointer leading-[0] inline text-black mr-3" />
                   {/* <div className="bg-amber-900 text-white rounded-full w-5 h-5 flex justify-center items-center text-xs relative top-[-10px] right-[10px]">
                     5
                   </div> */}
@@ -288,46 +290,48 @@ const Navbar = () => {
               >
                 Contact
               </Link>
-              <div
-                className="cursor-pointer"
-                onClick={() => toggleMobileDropdown("drop")}
-              >
-                <div className="hover:text-amber-500 block py-3 border-b">
-                  <span className="mr-2">Account</span>
-                  <CaretDownFill className="inline" />
-                </div>
-                {openMobileDropdown === "drop" && (
-                  <div
-                    className="relative bg-white p-2 rounded"
-                    style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.12)" }}
-                  >
-                    <Link
-                      to="/cart"
-                      className="hover:bg-gray-200 rounded p-2 block my-2"
-                    >
-                      Cart
-                    </Link>
-                    <Link
-                      to="/order"
-                      className="hover:bg-gray-200 rounded p-2 block my-2"
-                    >
-                      Orders
-                    </Link>
-                    <Link
-                      to="/address"
-                      className="hover:bg-gray-200 rounded p-2 block my-2"
-                    >
-                      Address
-                    </Link>
-                    <Link
-                      to="/settings"
-                      className="hover:bg-gray-200 rounded p-2 block my-2"
-                    >
-                      Settings
-                    </Link>
+              {token && (
+                <div
+                  className="cursor-pointer"
+                  onClick={() => toggleMobileDropdown("drop")}
+                >
+                  <div className="hover:text-amber-500 block py-3 border-b">
+                    <span className="mr-2">Account</span>
+                    <CaretDownFill className="inline" />
                   </div>
-                )}
-              </div>
+                  {openMobileDropdown === "drop" && (
+                    <div
+                      className="relative bg-white p-2 rounded"
+                      style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.12)" }}
+                    >
+                      <Link
+                        to="/cart"
+                        className="hover:bg-gray-200 rounded p-2 block my-2"
+                      >
+                        Cart
+                      </Link>
+                      <Link
+                        to="/order"
+                        className="hover:bg-gray-200 rounded p-2 block my-2"
+                      >
+                        Orders
+                      </Link>
+                      <Link
+                        to="/address"
+                        className="hover:bg-gray-200 rounded p-2 block my-2"
+                      >
+                        Address
+                      </Link>
+                      <Link
+                        to="/settings"
+                        className="hover:bg-gray-200 rounded p-2 block my-2"
+                      >
+                        Settings
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
             {!token && (
               <div className="py-3 px-5">

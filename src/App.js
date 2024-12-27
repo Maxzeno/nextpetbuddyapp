@@ -4,6 +4,7 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { AuthorizeUser } from './components/auth/authCheck.jsx';
 import Address from './pages/address.jsx';
 import Cart from './pages/cart.jsx';
 import ConfirmEmail from './pages/confirmEmail.jsx';
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/cart',
-    element: <Cart />
+    element: <AuthorizeUser><Cart /></AuthorizeUser>
   },
   {
     path: '/product',
@@ -44,19 +45,19 @@ const router = createBrowserRouter([
   },
   {
     path: '/order',
-    element: <Orders />
+    element: <AuthorizeUser><Orders /></AuthorizeUser>
   },
   {
     path: '/order/:orderId',
-    element: <OrderDetail />
+    element: <AuthorizeUser><OrderDetail /></AuthorizeUser>
   },
   {
     path: '/address',
-    element: <Address />
+    element: <AuthorizeUser><Address /></AuthorizeUser>
   },
    {
     path: '/settings',
-    element: <Settings />
+    element: <AuthorizeUser><Settings /></AuthorizeUser>
   },
   {
     path: '/product/:productId',
