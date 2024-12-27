@@ -22,13 +22,18 @@ export default function PetCard({
     img = petImage;
   }
 
-  const token = Cookies.get("token") || "";
-  const jwtBody = jwtDecode(token);
-
   const [loading, setLoading] = useState(false);
   const [cartId, setCartId] = useState(orderitem ? orderitem.id : null);
 
   const toogleCart = async () => {
+    const token = Cookies.get("token") || "";
+    let jwtBody;
+    try {
+      jwtBody = jwtDecode(token);
+    } catch {
+      toast.error("Login to add or remove from cart");
+      return;
+    }
     setLoading(true);
 
     const body = {

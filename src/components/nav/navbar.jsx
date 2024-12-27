@@ -1,5 +1,4 @@
 import Cookies from "js-cookie";
-import { jwtDecode } from "jwt-decode";
 import { useState } from "react";
 import {
   CaretDownFill,
@@ -16,7 +15,6 @@ import Button from "../button/button";
 
 const Navbar = () => {
   const token = Cookies.get("token") || "";
-  const jwtBody = jwtDecode(token);
 
   const [categoryData, categoryLoading, categoryError] = useFetch(
     "/pet",
@@ -70,7 +68,7 @@ const Navbar = () => {
             />
             <Search className="relative right-8 top-[-3px] inline text-gray-500" />
           </div>
-          {jwtBody.user_id ? (
+          {token ? (
             <div>
               <Link to="/cart">
                 <Cart className="text-[1.1em] leading-[0]" />
@@ -192,7 +190,7 @@ const Navbar = () => {
               className="text-[1.5em] cursor-pointer leading-[0] inline text-black mr-3"
               onClick={() => toggleDropdown("search")}
             />
-            {jwtBody.user_id && (
+            {token && (
               <>
                 <Link to="/cart">
                   <Cart className="text-[1.5em] cursor-pointer leading-[0] inline text-black" />
@@ -331,7 +329,7 @@ const Navbar = () => {
                 )}
               </div>
             </div>
-            {!jwtBody.user_id && (
+            {!token && (
               <div className="py-3 px-5">
                 <Button
                   to="/login"

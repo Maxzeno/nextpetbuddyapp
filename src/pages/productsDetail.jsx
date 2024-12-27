@@ -13,7 +13,6 @@ import useFetch from "../hooks/useFetch.js";
 export default function ProductDetail() {
   const [currentImage, setCurrentImage] = useState(image1);
   let location = useLocation();
-  console.log(location.pathname);
   const [productData, productLoading, productError] = useFetch(
     `${location.pathname}/`,
     false
@@ -32,9 +31,6 @@ export default function ProductDetail() {
     );
   }, [productData]);
 
-  const token = Cookies.get("token") || "";
-  const jwtBody = jwtDecode(token);
-
   const [loading, setLoading] = useState(false);
   const [cartId, setCartId] = useState(
     productData
@@ -45,6 +41,14 @@ export default function ProductDetail() {
   );
 
   const toogleCart = async () => {
+    const token = Cookies.get("token") || "";
+    let jwtBody;
+    try {
+      jwtBody = jwtDecode(token);
+    } catch {
+      toast.error("Login to add or remove from cart");
+      return;
+    }
     setLoading(true);
 
     const body = {
