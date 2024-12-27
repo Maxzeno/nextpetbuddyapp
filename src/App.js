@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthorizeUser } from './components/auth/authCheck.jsx';
+import { LogoutUser } from './components/auth/logout.jsx';
 import Address from './pages/address.jsx';
 import Cart from './pages/cart.jsx';
 import ConfirmEmail from './pages/confirmEmail.jsx';
@@ -82,6 +83,10 @@ const router = createBrowserRouter([
   {
     path: '/confirm-email/:uid/:token',
     element: <ConfirmEmail />
+  },
+    {
+    path: '/logout',
+    element: <LogoutUser />
   },
 ]);
 
