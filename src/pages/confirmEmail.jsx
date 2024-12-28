@@ -4,7 +4,6 @@ import useFetch from "../hooks/useFetch";
 
 export default function ConfirmEmail() {
   let location = useLocation();
-  console.log(location.pathname);
   const [emailConfirmData, emailConfirmLoading, emailConfirmError] = useFetch(
     `${location.pathname}/`,
     false
