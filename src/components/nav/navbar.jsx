@@ -17,7 +17,7 @@ const Navbar = () => {
   const token = Cookies.get("token") || "";
 
   const [categoryData, categoryLoading, categoryError] = useFetch(
-    "/pet",
+    "/pet/",
     false
   );
   const navigate = useNavigate();
