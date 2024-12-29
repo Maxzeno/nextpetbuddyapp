@@ -8,9 +8,11 @@ import useFetch from "../hooks/useFetch.js";
 
 export default function OrderDetail() {
   let location = useLocation();
-  console.log(location.pathname);
+  if (!location.pathname.endsWith("/")) {
+    location.pathname += "/";
+  }
   const [orderData, orderLoading, orderError] = useFetch(
-    `${location.pathname}/`
+    `${location.pathname}`
   );
 
   const [userData, userLoading, userError] = useFetch("/auth-user");

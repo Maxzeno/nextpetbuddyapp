@@ -13,8 +13,11 @@ import useFetch from "../hooks/useFetch.js";
 export default function ProductDetail() {
   const [currentImage, setCurrentImage] = useState(image1);
   let location = useLocation();
+  if (!location.pathname.endsWith("/")) {
+    location.pathname += "/";
+  }
   const [productData, productLoading, productError] = useFetch(
-    `${location.pathname}/`,
+    `${location.pathname}`,
     false
   );
 
