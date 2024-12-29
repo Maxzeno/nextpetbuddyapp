@@ -16,7 +16,7 @@ const Home = () => {
   );
   const [petsData, petsLoading, petsError] = useFetch(
     "/product/?limit=12",
-    false
+    true
   );
   return (
     <>

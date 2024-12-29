@@ -18,7 +18,7 @@ export default function ProductDetail() {
   }
   const [productData, productLoading, productError] = useFetch(
     `${location.pathname}`,
-    false
+    true
   );
 
   useEffect(() => {

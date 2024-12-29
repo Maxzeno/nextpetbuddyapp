@@ -18,7 +18,7 @@ const useFetch = (url, requireAuth=true) => {
         "Content-Type": "application/json",
       };
 
-      if (requireAuth) {
+      if (requireAuth && token) {
         headers['Authorization'] = `Bearer ${token}`
       }
 

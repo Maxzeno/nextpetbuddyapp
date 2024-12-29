@@ -21,6 +21,7 @@ export default function PetCard({
   } else {
     img = petImage;
   }
+  console.log(orderitem);
 
   const [loading, setLoading] = useState(false);
   const [cartId, setCartId] = useState(orderitem ? orderitem.id : null);

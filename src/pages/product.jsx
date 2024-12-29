@@ -30,7 +30,7 @@ export default function Products() {
     }
   }
 
-  const [petsData, petsLoading, petsError] = useFetch(urlAnimal, false);
+  const [petsData, petsLoading, petsError] = useFetch(urlAnimal, true);
 
   const [categoryData, categoryLoading, categoryError] = useFetch(
     "/pet",
