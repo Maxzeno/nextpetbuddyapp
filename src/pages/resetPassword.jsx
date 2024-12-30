@@ -33,7 +33,6 @@ export default function ResetPassword() {
         false,
         "PUT"
       );
-      console.log(errorObj, "errorObj");
       if (!errorObj) {
         toast.success("Password reset successful");
         navigate("/login");
