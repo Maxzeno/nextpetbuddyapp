@@ -23,12 +23,12 @@ export default function PaymentButton({ amount, userData }) {
   };
 
   const onSuccess = (reference) => {
-    navigate("/cart");
+    navigate("/order", { replace: true });
     toast.success("Your payment is been processed");
   };
 
   const onClose = () => {
-    navigate("/cart");
+    navigate("/cart", { replace: true });
   };
 
   const initializePayment = usePaystackPayment(config);
