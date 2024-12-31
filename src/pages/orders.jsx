@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Footer from "../components/section/footer.jsx";
 import Loading from "../components/section/loading.jsx";
 import Sidebar from "../components/section/sidebar.jsx";
-import { formatDate } from "../helper/dateFormat.js";
+import { formatDate } from "../helper/format.js";
 import useFetch from "../hooks/useFetch.js";
 
 export default function Orders() {

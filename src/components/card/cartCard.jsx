@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import jumImage from "../../assets/dog.jpg";
 import { setAmount } from "../../features/counter/totalPriceSlice";
+import { formatAmount } from "../../helper/format";
 import submitHelper from "../../helper/submit";
 import Loading from "../section/loading";
 
@@ -127,7 +128,7 @@ export default function CartCard({ title, price, image, id, quantity }) {
             </div>
           )}
         </div>
-        <div className="font-medium">₦{price}</div>
+        <div className="font-medium">₦{formatAmount(price)}</div>
       </div>
     </div>
   );

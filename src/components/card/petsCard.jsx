@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import petImage from "../../assets/hero-pet.png";
+import { formatAmount } from "../../helper/format";
 import submitHelper from "../../helper/submit";
 
 export default function PetCard({
@@ -92,7 +93,7 @@ export default function PetCard({
           {breed}
         </Link>
         <div className="flex justify-between">
-          <div className="font-normal">{price}</div>
+          <div className="font-normal">₦{formatAmount(price)}</div>
           <button
             onClick={() => toogleCart()}
             className="border rounded-3xl py-2 px-3 border-amber-500 hover:bg-gray-100"

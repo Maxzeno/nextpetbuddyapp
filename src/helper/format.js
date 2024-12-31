@@ -4,5 +4,9 @@ const formatDate = (dateString) => {
   return new Intl.DateTimeFormat('en-US', options).format(date);
 };
 
-export { formatDate };
+const formatAmount = (num) => {
+  return Number(num).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+export { formatAmount, formatDate };
 
