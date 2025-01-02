@@ -6,7 +6,8 @@ import Footer from "../components/section/footer.jsx";
 import Loading from "../components/section/loading.jsx";
 import PaymentButton from "../components/section/paymentButton.jsx";
 import Sidebar from "../components/section/sidebar.jsx";
-import { setAmount } from "../features/counter/totalPriceSlice.js";
+import { setAmountExact } from "../features/counter/totalPriceSlice.js";
+import { formatAmount } from "../helper/format.js";
 import useFetch from "../hooks/useFetch.js";
 
 export default function Cart() {
@@ -18,16 +19,19 @@ export default function Cart() {
 
   useEffect(() => {
     if (cartsData) {
+      
+      let totalValue = 0;
       for (let index = 0; index < cartsData.length; index++) {
         const cartItem = cartsData[index];
-        dispatch(setAmount(cartItem.animal.price * cartItem.quantity));
+        totalValue += cartItem.animal.price * cartItem.quantity;
       }
+      dispatch(setAmountExact(totalValue + 1000));
     }
   }, [cartsData]);
   return (
     <>
       <Sidebar
-        head={<div className="font-semibold text-3xl">Shop Cart</div>}
+        head={<div className="font-semibold text-3xl">Shopping Cart</div>}
         body={
           <div>
             {!cartsLoading &&
@@ -54,7 +58,7 @@ export default function Cart() {
                 </div>
                 <div className="pt-5 font-medium flex justify-between">
                   <div>Total</div>
-                  <div> ₦{totalPrice.toFixed(2)}</div>
+                  <div> ₦{formatAmount(totalPrice.toFixed(2))}</div>
                 </div>
                 <div className="text-right pt-5">
                   {!userLoading &&

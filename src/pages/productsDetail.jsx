@@ -7,6 +7,7 @@ import image1 from "../assets/hero-pet.png";
 import Navbar from "../components/nav/navbar.jsx";
 import Footer from "../components/section/footer.jsx";
 import Loading from "../components/section/loading.jsx";
+import { formatAmount } from "../helper/format.js";
 import submitHelper from "../helper/submit.js";
 import useFetch from "../hooks/useFetch.js";
 
@@ -138,7 +139,7 @@ export default function ProductDetail() {
                   {productData.name}
                 </div>
                 <div className="font-semibold text-xl mb-3">
-                  ₦{productData.price}
+                  ₦{formatAmount(productData.price)}
                 </div>
                 <button
                   onClick={() => toogleCart()}

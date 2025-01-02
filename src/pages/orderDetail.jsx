@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import Footer from "../components/section/footer.jsx";
 import Loading from "../components/section/loading.jsx";
 import Sidebar from "../components/section/sidebar.jsx";
-import { formatDate } from "../helper/format.js";
+import { formatAmount, formatDate } from "../helper/format.js";
 import useFetch from "../hooks/useFetch.js";
 
 export default function OrderDetail() {
@@ -97,9 +97,9 @@ export default function OrderDetail() {
                         <td className="py-2 px-4 border-t">{item.animal.id}</td>
                         <td className="py-2 px-4 border-t">{item.quantity}</td>
                         <td className="py-2 px-4 border-t whitespace-nowrap">
-                          {item.animal.price_ordered_at
+                           ₦{formatAmount(item.animal.price_ordered_at
                             ? item.animal.price_ordered_at
-                            : item.animal.price}
+                            : item.animal.price)}
                         </td>
                       </tr>
                     ))}
