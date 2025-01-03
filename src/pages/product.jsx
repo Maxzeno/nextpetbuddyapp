@@ -79,12 +79,12 @@ export default function Products() {
           </div>
           <div className="md:col-span-3">
             <div className="font-medium text-3xl bg-gray-200 rounded p-10">
-              Products
+              Pets
             </div>
             <div className="flex justify-between items-center">
               <div className="text-sm py-5">
                 {" "}
-                {!petsLoading && !petsError && petsData.count} Products found
+                {!petsLoading && !petsError && petsData.count} Pets found
               </div>
               <div className="block md:hidden">
                 <button

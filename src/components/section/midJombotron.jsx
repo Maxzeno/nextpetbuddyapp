@@ -7,7 +7,7 @@ export default function MidJumbotron() {
       <div className="flex-1">
         <div className="font-bold text-4xl mb-3">Get the best pets</div>
         <div className="font-normal text-xl mb-3">
-          Everything you want at your finger tips. find your buddy.
+          Every pet you want at your finger tips. find your buddy.
         </div>
         <Button
           to="/login"

@@ -286,7 +286,7 @@ const Navbar = () => {
                 to="/product"
                 className="hover:text-amber-500 block py-3 border-b"
               >
-                Product
+                Pets
               </Link>
               <Link
                 to="/contact"
