@@ -75,7 +75,7 @@ export default function OrderDetail() {
                       <td className="py-2 px-4 border-t font-medium"></td>
                       <td className="py-2 px-4 border-t font-medium">Name</td>
                       <td className="py-2 px-4 border-t font-medium">
-                        Product ID
+                        Pet ID
                       </td>
                       <td className="py-2 px-4 border-t font-medium">
                         Quantity

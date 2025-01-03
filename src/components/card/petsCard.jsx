@@ -58,7 +58,7 @@ export default function PetCard({
 
       if (!errorObj) {
         toast.success(
-          cartId ? "Product removed from cart" : "Product added to cart"
+          cartId ? "Pet removed from cart" : "Pet added to cart"
         );
       } else {
         toast.error(errorObj.detail || "An error occurred");

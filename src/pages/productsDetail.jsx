@@ -152,7 +152,7 @@ export default function ProductDetail() {
                 </button>
               </div>
               <div className="flex pt-5">
-                <div className="flex-1">Product Code</div>
+                <div className="flex-1">Pet Code</div>
                 <div className="flex-1">{productData.id}</div>
               </div>
             </div>

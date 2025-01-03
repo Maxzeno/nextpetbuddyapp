@@ -128,7 +128,7 @@ const Navbar = () => {
             Home
           </Link>
           <Link to="/product" className="mr-5 hover:text-amber-500">
-            Product
+            Pets
           </Link>
           <Link to="/contact" className="mr-5 hover:text-amber-500">
             Contact

@@ -26,7 +26,7 @@ export default function Footer() {
       </div>
 
       <div className="text-center text-sm py-5">
-        Copyright 2024 © NextPetBuddy. All rights reserved.
+        Copyright 2025 © NextPetBuddy. All rights reserved.
       </div>
     </div>
   );
