@@ -97,9 +97,9 @@ export default function OrderDetail() {
                         <td className="py-2 px-4 border-t">{item.animal.id}</td>
                         <td className="py-2 px-4 border-t">{item.quantity}</td>
                         <td className="py-2 px-4 border-t whitespace-nowrap">
-                           ₦{formatAmount(item.animal.price_ordered_at
+                           ₦{formatAmount(item.quantity *(item.animal.price_ordered_at
                             ? item.animal.price_ordered_at
-                            : item.animal.price)}
+                            : item.animal.price))}
                         </td>
                       </tr>
                     ))}
