@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/Next_Pet_buddy.png";
 
 const NavbarAuth = ({ child }) => {
@@ -6,9 +7,9 @@ const NavbarAuth = ({ child }) => {
       <div className="w-[80vw] mx-auto my-5">
         <div className="flex justify-center lg:justify-between items-center mb-7">
           <div className="pt-2">
-            <a href="/">
+            <Link to="/">
               <img src={logo} alt="" width={150} />
-            </a>
+            </Link>
           </div>
 
           <div className="hidden lg:block">{child}</div>

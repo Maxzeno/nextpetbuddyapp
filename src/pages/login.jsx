@@ -96,9 +96,9 @@ export default function Login() {
               )}
             </div>
             <div className="text-right">
-              <a href="/forgot-password" className="hover:text-amber-600">
+              <Link to="/forgot-password" className="hover:text-amber-600">
                 Forgot password
-              </a>
+              </Link>
             </div>
 
             <Button

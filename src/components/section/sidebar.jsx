@@ -106,7 +106,7 @@ export default function Sidebar({ head, body }) {
                 } rounded-md py-2 px-4`}
               >
                 <ArrowReturnRight className="text-[1.1em] leading-[0]" />
-                <span>Log out</span>
+               <Link to="/logout"> <span>Log out</span></Link>
               </div>
             </div>
 
